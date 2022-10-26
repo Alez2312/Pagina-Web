@@ -15,17 +15,17 @@
             <h1 class="title">COMPAÑEROS POR SIMILITUD</h1>
             <nav class="nav" id="nav">
                 <ul>
-                    <li><a href="inicio.html">Inicio</a></li>
-                    <li><a href="tipoCanino.html">Tipo de canino</a></li>
-                    <li><a href="canino.html">Canino</a></li>
-                    <li><a href="refugio.html">Refugio</a></li>
-                    <li><a href="adultoMayor.html">Adulto mayor</a></li>
+                    <li><a href="inicio.php">Inicio</a></li>
+                    <li><a href="tipoCanino.php">Tipo de canino</a></li>
+                    <li><a href="canino.php">Canino</a></li>
+                    <li><a href="refugio.php">Refugio</a></li>
+                    <li><a href="adultoMayor.php">Adulto mayor</a></li>
                     <li><a href="#">Más</a>
                         <ul>
-                            <li><a href="monitoreo.html">Monitoreo</a></li>
-                            <li><a href="programacion.html">Programación</a></li>
-                            <li><a href="usuario.html">Usuario</a></li>
-                            <li><a href="perfil.html">Perfil</a></li>
+                            <li><a href="monitoreo.php">Monitoreo</a></li>
+                            <li><a href="programacion.php">Programación</a></li>
+                            <li><a href="usuario.php">Usuario</a></li>
+                            <li><a href="perfil.php">Perfil</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -34,7 +34,7 @@
         <div class="container">
             <form class="simon_form" method="post" name="simon" onsubmit="return validated()">
                 <div class="font">
-                    <label class="id">Id:</label>
+                    <label class="id">Código:</label>
                     <input type="number" name="idSimon" id="idSimon">
                 </div>
                 <div class="font font2">

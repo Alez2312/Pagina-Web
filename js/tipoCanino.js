@@ -1,11 +1,5 @@
-var id = document.getElementById('idTipoCanino')
-var descripcion = document.getElementById('descripcion')
+let toggle = document.querySelector(".toggle");
 
-function validated() {
-    if (id.value != "admin") {
-        id.style.border = "1px solid red";
-        id_error.style.display = "block";
-        id.focus();
-        return false;
-    }
+function Animatedtoggle(){
+    toggle.classList.toggle("active");
 }

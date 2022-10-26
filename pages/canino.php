@@ -14,17 +14,17 @@
         <h1 class="title">COMPAÑEROS POR SIMILITUD</h1>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="tipoCanino.html">Tipo de canino</a></li>
-                <li><a href="refugio.html">Refugio</a></li>
-                <li><a href="adultoMayor.html">Adulto mayor</a></li>
-                <li><a href="simon.html">Simon</a></li>
+                <li><a href="inicio.php">Inicio</a></li>
+                <li><a href="tipoCanino.php">Tipo de canino</a></li>
+                <li><a href="refugio.php">Refugio</a></li>
+                <li><a href="adultoMayor.php">Adulto mayor</a></li>
+                <li><a href="simon.php">Simon</a></li>
                 <li><a href="#">Más</a>
                     <ul>
-                        <li><a href="monitoreo.html">Monitoreo</a></li>
-                        <li><a href="programacion.html">Programación</a></li>
-                        <li><a href="usuario.html">Usuario</a></li>
-                        <li><a href="perfil.html">Perfil</a></li>
+                        <li><a href="monitoreo.php">Monitoreo</a></li>
+                        <li><a href="programacion.php">Programación</a></li>
+                        <li><a href="usuario.php">Usuario</a></li>
+                        <li><a href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
@@ -33,7 +33,7 @@
     <div class="container">
         <form class="canino_form" method="post" name="canino" onsubmit="return validated()">
             <div class="font">
-                <label class="id">Id:</label>
+                <label class="id">Código:</label>
                 <input type="number" name="idCanino" id="idCanino">
             </div>
             <div class="font font2">
@@ -65,10 +65,9 @@
                 <input type="text" name="refugio" id="refugio">
             </div>
             <div class="font font9">
-                <label class="estado">Estado:</label>
-                <div class="switch-button">
-                    <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
-                    <label for="switch-label" class="switch-button__label"></label>
+            <label class="estado">Estado:</label>
+                <div class="toggle" onclick="Animatedtoggle()">
+                    <div class="toggle_button"></div>
                 </div>
             </div>
             <button type="submit">Guardar</button>

@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1 class="label">Compañeros por similitud</h1>
-        <form class="login_form" action="form.html" method="post" name="form" onsubmit="return validated()">
+        <form class="login_form" action="inicio.php" method="post" name="form" onsubmit="return validated()">
             <div class="font">Usuario:</div>
             <input id="username" autocomplete="off" type="text" name="username">
             <div id="username_error">Por favor ingrese un usuario</div>
