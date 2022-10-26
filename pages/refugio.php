@@ -59,14 +59,12 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font6">
                 <label class="estado">Estado:</label>
-                <div class="toggle" onclick="Animatedtoggle()">
+                <div class="toggle" value="0" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>
+                    <input type="hidden" name="estado" id="estado">
                 </div>
             </div>
             <button type="submit">Guardar</button>
-            <button>Buscar</button>
-            <button type="submit">Modificar</button>
-            <button>Eliminar</button>
             <button type="reset">Cancelar</button>
         </form>
     </div>
@@ -78,6 +76,7 @@ $refugio = "SELECT * FROM refugio";
         <div class="table_header">Teléfono</div>
         <div class="table_header">Celular</div>
         <div class="table_header">Estado</div>
+        <div class="table_header">Opciones</div>
         <?php $resultado = mysqli_query($conexion, $refugio);
 
         while ($row = mysqli_fetch_assoc($resultado)) { ?>
@@ -86,7 +85,11 @@ $refugio = "SELECT * FROM refugio";
             <div class="table_item"><?php echo $row['direccion']; ?></div>
             <div class="table_item"><?php echo $row['telefono']; ?></div>
             <div class="table_item"><?php echo $row['celular']; ?></div>
-            <div class="table_item"><?php echo $row['estado']; ?></div>
+            <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+            <div class="table_item">
+                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id'];?>">Modificar</a>
+                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id'];?>">Eliminar</a>
+            </div>
         <?php }
         mysqli_free_result($resultado); ?>
     </div>
