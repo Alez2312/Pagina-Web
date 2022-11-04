@@ -1,4 +1,3 @@
-
     var username = document.getElementById('username');
     var password = document.getElementById('password');
     var username_error = document.getElementById('username_error');

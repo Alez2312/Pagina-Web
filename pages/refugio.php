@@ -35,40 +35,9 @@ $refugio = "SELECT * FROM refugio";
             </ul>
         </nav>
     </div>
-    <div class="container">
-        <form class="refugio_form" method="POST" name="refugio" action="insertRefugio.php" onsubmit="return validated()">
-            <div class="font">
-                <label class="id">Código:</label>
-                <input type="number" name="id" id="id">
-            </div>
-            <div class="font font2">
-                <label class="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-            </div>
-            <div class="font font3">
-                <label>Dirección:</label>
-                <input type="text" name="direccion" id="direccion">
-            </div>
-            <div class="font font4">
-                <label class="telefono">Teléfono:</label>
-                <input type="text" name="telefono" id="telefono">
-            </div>
-            <div class="font font5">
-                <label class="celular">Celular:</label>
-                <input type="text" name="celular" id="celular">
-            </div>
-            <div class="font font6">
-                <label class="estado">Estado:</label>
-                <div class="toggle" value="0" onclick="Animatedtoggle()">
-                    <div class="toggle_button"></div>
-                    <input type="hidden" name="estado" id="estado">
-                </div>
-            </div>
-            <button type="submit">Guardar</button>
-            <button type="reset">Cancelar</button>
-        </form>
-    </div>
+    
     <div class="container_table">
+        <a class="buttonAgregar" href="insertarRefugio.php">Agregar</a>
         <div class="table_title">Datos de refugio</div>
         <div class="table_header">Código</div>
         <div class="table_header">Nombre</div>
@@ -87,8 +56,8 @@ $refugio = "SELECT * FROM refugio";
             <div class="table_item"><?php echo $row['celular']; ?></div>
             <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
             <div class="table_item">
-                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id'];?>">Modificar</a>
-                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id'];?>">Eliminar</a>
+                <a class="buttonME" href="modificar.php?id=<?php echo $row['id']; ?>">Modificar</a>
+                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </div>
         <?php }
         mysqli_free_result($resultado); ?>
