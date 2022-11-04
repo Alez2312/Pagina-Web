@@ -1,36 +1,48 @@
-var refugio = document.getElementById("refugio");
-var id = document.getElementById("id").value;
-var nombre = document.getElementById("nombre").value;
-var direccion = document.getElementById("direccion").value;
-var telefono = document.getElementById("telefono").value;
-var celular = document.getElementById("celular").value;
-
-const expresiones = {
-  expCelular: /^\d{10}$/,
-  expTelefono: /^\d{3}\s\d{7}$/,
-}
-
-refugio.addEventListener('submit', (e) => {
-})
-
 function validated() {
+  var id = document.getElementById("id").value;
+  var nombre = document.getElementById("nombre").value;
+  var direccion = document.getElementById("direccion").value;
+  var telefono = document.getElementById("telefono").value;
+  var celular = document.getElementById("celular").value;
+
+  var msgId = document.getElementById("msgId");
+  var msgNombre = document.getElementById("msgNombre");
+  var msgDireccion = document.getElementById("msgDireccion");
+  var msgTelefono = document.getElementById("msgTelefono");
+  var msgCelular = document.getElementById("msgCelular");
+
+  var expTelefono = /^\d{3}\s\d{7}$/;
+  var expCelular = /^\d{10}$/;
+
+  let responseValid = false;
+  let validation = true;
+  let msg = document.querySelectorAll('small[id^="msg"]');
+  let counter = 0;
+
   if (id == null || id.length == 0) {
-    alert("[ERROR] Código no valido");
-    return false;
-  } else if (nombre == null || nombre.length == 0) {
-    alert("[ERROR] Nombre no valido");
-    return false;
-  } else if (direccion == null || direccion.length == 0) {
-    alert("[ERROR] Dirección no valido");
-    return false;
-  }else if (telefono == null || telefono.length == 0) {
-    alert("[ERROR] Teléfono no valido");
-    return false;
-  }else if (celular == null ||celular.length == 0) {
-    alert("[ERROR] Celular no valido");
-    return false;
+    msgId.innerHTML = "El código está vacio";
+    validation = false;
   }
-  return true
+  if (nombre == null || nombre.length == 0) {
+    msgNombre.innerHTML = "El nombre está vacio";
+    validation = false;
+  }
+  if (direccion == null || direccion.length == 0) {
+    msgId.innerHTML = "La dirección está vacio";
+    validation = false;
+  }
+  if (telefono == null || telefono.length == 0) {
+    msgId.innerHTML = "El teléfono está vacio";
+    validation = false;
+  }
+  if (celular == null || celular.length == 0) {
+    msgId.innerHTML = "El celular está vacio";
+    validation = false;
+  }
+  if (validation == true){
+    alert(`EL refugio ${nombre} se registró con éxito`);
+  }
+  return validation;
 }
 
 let toggle = document.querySelector(".toggle");

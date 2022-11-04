@@ -26,22 +26,27 @@ if (isset($_POST['submit'])) {
             <div class="font">
                 <label class="id">Código:</label>
                 <input type="number" name="id" id="id">
+                <small id="msgId" class="small"></small>
             </div>
             <div class="font font2">
                 <label class="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre">
+                <small id="msgNombre" class="small"></small>
             </div>
             <div class="font font3">
                 <label>Dirección:</label>
                 <input type="text" name="direccion" id="direccion">
+                <small id="msgDireccion" class="small"></small>
             </div>
             <div class="font font4">
                 <label class="telefono">Teléfono:</label>
                 <input type="text" name="telefono" id="telefono">
+                <small id="msgTelefono" class="small"></small>
             </div>
             <div class="font font5">
                 <label class="celular">Celular:</label>
                 <input type="text" name="celular" id="celular">
+                <small id="msgCelular" class="small"></small>
             </div>
             <div class="font font6">
                 <label class="estado">Estado:</label>
