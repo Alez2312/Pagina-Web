@@ -1,11 +1,15 @@
+<?php
+include("conexion.php");
+$canino = "SELECT * FROM canino";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refugio</title>
+    <title>Canino</title>
     <link rel="stylesheet" href="../styles/canino.css">
 </head>
 
@@ -29,55 +33,44 @@
                 </li>
             </ul>
         </nav>
+    </div>    
+    <div class="container_table">
+        <a class="buttonAgregar" href="insertarCanino.php">Agregar</a>
+        <div class="table_title">Datos del canino</div>
+        <div class="table_header">Código</div>
+        <div class="table_header">Nombre</div>
+        <div class="table_header">Fecha de adopción inicial</div>
+        <div class="table_header">Fecha de adopción final</div>
+        <div class="table_header">Latitud</div>
+        <div class="table_header">Longitud</div>
+        <div class="table_header">Carnet</div>
+        <div class="table_header">Foto</div>
+        <div class="table_header">Tipo de canino</div>
+        <div class="table_header">Refugio</div>
+        <div class="table_header">Estado</div>
+        <div class="table_header">Opciones</div>
+        <?php $resultado = mysqli_query($conexion, $canino);
+
+        while ($row = mysqli_fetch_assoc($resultado)) { ?>
+            <div class="table_item"><?php echo $row['id']; ?></div>
+            <div class="table_item"><?php echo $row['nombre']; ?></div>
+            <div class="table_item"><?php echo $row['fecha_adopcion_inicial']; ?></div>
+            <div class="table_item"><?php echo $row['fecha_adopcion_final']; ?></div>
+            <div class="table_item"><?php echo $row['latitud']; ?></div>
+            <div class="table_item"><?php echo $row['longitud']; ?></div>
+            <div class="table_item"><?php echo $row['carnet']; ?></div>
+            <div class="table_item"><?php echo $row['foto']; ?></div>
+            <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
+            <div class="table_item"><?php echo $row['id_refugio']; ?></div>
+            <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+            <div class="table_item">
+                <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+            </div>
+        <?php }
+        mysqli_free_result($resultado); ?>
     </div>
-    <div class="container">
-        <form class="canino_form" method="post" name="canino" onsubmit="return validated()">
-            <div class="font">
-                <label class="id">Código:</label>
-                <input type="number" name="idCanino" id="idCanino">
-            </div>
-            <div class="font font2">
-                <label class="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-            </div>
-            <div class="font font3">
-                <label>Fecha adopción:</label>
-                <input type="date" name="fecha_adopcion" id="fecha_adopcion">
-            </div>
-            <div class="font font4">
-                <label class="rastreador">Rastreador:</label>
-                <input type="text" name="rastreador" id="rastreador">
-            </div>
-            <div class="font font5">
-                <label class="carnet">Carnet:</label>
-                <input type="text" name="carnet" id="carnet">
-            </div>
-            <div class="font font6">
-                <label class="foto">Foto:</label>
-                <input type="text" name="foto" id="foto">
-            </div>
-            <div class="font font7">
-                <label class="id_tipoCanino">Tipo canino:</label>
-                <input type="text" name="id_tipoCanino" id="id_tipoCanino">
-            </div>
-            <div class="font font8">
-                <label class="refugio">Refugio:</label>
-                <input type="text" name="refugio" id="refugio">
-            </div>
-            <div class="font font9">
-            <label class="estado">Estado:</label>
-                <div class="toggle" onclick="Animatedtoggle()">
-                    <div class="toggle_button"></div>
-                </div>
-            </div>
-            <button type="submit">Guardar</button>
-            <button>Buscar</button>
-            <button type="submit">Modificar</button>
-            <button>Eliminar</button>
-            <button type="reset">Cancelar</button>
-        </form>
-    </div>
-    <script src="../login.js"></script>
+    <script src="../js/canino.js"></script>
 </body>
 
 </html>

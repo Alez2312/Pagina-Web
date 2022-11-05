@@ -4,7 +4,7 @@ $id = $_POST["id"];
 $descripcion = $_POST["descripcion"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost","root","","companions_by_similarity");
+$conexion = mysqli_connect("localhost","root","","compañerosporsimilitud");
 
 $insertar = "INSERT INTO tipocanino(id,descripcion,estado) VALUES ('$id','$descripcion','$estado')";
 $resultado = mysqli_query($conexion, $insertar);

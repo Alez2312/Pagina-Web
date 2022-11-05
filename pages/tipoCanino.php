@@ -49,8 +49,8 @@ $tipoCanino = "SELECT * FROM tipocanino";
             <div class="table_item"><?php echo $row['descripcion']; ?></div>
             <div class="table_item"><?php echo $row['estado']; ?></div>
             <div class="table_item">
-                <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </div>
         <?php }
         mysqli_free_result($resultado); ?>

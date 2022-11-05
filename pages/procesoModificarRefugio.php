@@ -7,7 +7,7 @@ $telefono = $_POST["telefono"];
 $celular = $_POST["celular"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost","root","","companions_by_similarity");
+$conexion = mysqli_connect("localhost","root","","compañerosporsimilitud");
 
 $actualizar = "UPDATE refugio SET nombre='$nombre', direccion='$direccion', telefono='$telefono', celular='$celular', estado='$estado' WHERE id='$id'";
 

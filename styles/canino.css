@@ -6,10 +6,11 @@ body {
     rgba(148, 187, 233, 1) 100%
   );
 }
-.title, nav {
-    text-align: center;
-    position: relative;
-    z-index: 2;
+.title,
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 ul {
@@ -42,127 +43,56 @@ ul li:hover {
   background: #ffffff;
   color: #f7f7f7;
 }
-.container {
-    position: absolute;
-    z-index: 1;
-    margin: 40px 28%;
-    width: 45%;
-    background: #dedede;
-    border-radius: 5px;
+.buttonAgregar {
+  border: #000000 solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  color: #000000;
+  margin: 7px;
+  font-size: large;
+}
+.buttonAgregar:hover{
+  background-color: #689ed1;
+  color: white;
 }
 
-.canino_form {
-    padding: 20px 110px;
-}
-.canino_form .font {
-    font-size: 18px;
-}
-.canino_form .font2 {
-    padding-top: 15px;
-}
-.canino_form .font3 {
-    padding-top: 15px;
-}
-.canino_form .font4 {
-    padding-top: 15px;
-}
-.canino_form .font5 {
-    padding-top: 15px;
-}
-.canino_form .font6 {
-    padding-top: 15px;
-}
-.canino_form .font7 {
-    padding-top: 15px;
-}
-.canino_form .font8 {
-    padding-top: 15px;
-}
-.canino_form .font9 {
-    padding: 15px 0 15px 0;
+.container_table {
+  margin: 50px auto;
+  background: #dedede;
+  border-radius: 5px;
+  display: grid;
+  grid-auto-rows: 40px;
+  box-shadow: 0 0 20px #333;
 }
 
-.id {
-    margin: 0 100px 0 0;
-}
-.nombre {
-  margin: 0 55px 0 0;
-}
-.rastreador {
-  margin: 0 35px 0 0;
-}
-.carnet {
-  margin: 0 65px 0 0;
-}
-.foto {
-  margin: 0 80px 0 0;
-}
-.id_tipoCanino {
-  margin: 0 28px 0 0;
-}
-.refugio {
-  margin: 0 55px 0 0;
-}
-.estado {
-  margin: 0 65px 0 0;
-  padding: auto;
-}
-.canino_form input {
-    height: 40px;
-    width: 350px;
-    padding: 0 5px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid silver;
-}
-.canino_form button {
-    margin: 45px 0 30px 0;
-    height: 45px;
-    width: 120px;
-    font-size: 20px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    background: #689ed1;
-    color: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #6ab4c7;
-    transition: .5s;
-}
-.canino_form button:hover {
-    background: #ffffff;
-    color: #000000;
+.table_title {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.toggle {
-  position: absolute;
-  width: 60px;
-  height: 35px;
-  background: red;
-  border-radius: 30px;
-  margin-left: 90px;
+.table_header,
+.table_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.toggle .toggle_button {
-  position: relative;
-  top: 2px;
-  left: 2px;
-  width: 30px;
-  height: 30px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
+.table_header {
+  font-weight: bold;
 }
 
-.toggle.active {
-  background: green;
+.table_item {
+  padding: 5px;
+  font-size: 20px;
 }
-
-.toggle.active .toggle_button{
-  left: 27px;
-}
-
 ul li:hover {
   background: #ffffff;
   color: #000000;
@@ -187,4 +117,15 @@ ul ul a {
 }
 ul li:hover > ul {
   display: block;
+}
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
 }

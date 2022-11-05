@@ -4,9 +4,9 @@ $id = $_POST["id"];
 $descripcion = $_POST["descripcion"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost","root","","companions_by_similarity");
+$conexion = mysqli_connect("localhost","root","","compañerosporsimilitud");
 
-$actualizar = "UPDATE tipocanoino SET descripcion='$descripcion', estado='$estado' WHERE id='$id'";
+$actualizar = "UPDATE tipocanino SET descripcion='$descripcion', estado='$estado' WHERE id='$id'";
 
 $resultado = mysqli_query($conexion, $actualizar);
 if ($resultado) {
