@@ -34,8 +34,7 @@ $refugio = "SELECT * FROM refugio";
                 </li>
             </ul>
         </nav>
-    </div>
-    
+    </div>    
     <div class="container_table">
         <a class="buttonAgregar" href="insertarRefugio.php">Agregar</a>
         <div class="table_title">Datos de refugio</div>
@@ -56,8 +55,8 @@ $refugio = "SELECT * FROM refugio";
             <div class="table_item"><?php echo $row['celular']; ?></div>
             <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
             <div class="table_item">
-                <a class="buttonME" href="modificar.php?id=<?php echo $row['id']; ?>">Modificar</a>
-                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </div>
         <?php }
         mysqli_free_result($resultado); ?>

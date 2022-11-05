@@ -35,41 +35,23 @@ $tipoCanino = "SELECT * FROM tipocanino";
             </ul>
         </nav>
     </div>
-    <div class="container">
-        <form class="tipoCanino_form" method="post" name="tipoCanino" action="insertTipoCanino.php" onsubmit="return validated()">
-            <div class="font">
-                <label class="id">Código:</label>
-                <input type="number" name="idTipoCanino" id="idTipoCanino">
-            </div>
-            <div class="font font2">
-                <label  >Descripción:</label>
-                <input type="text" name="descripcion" id="descripcion">
-
-            </div>
-            <div class="font font3">
-                <label class="estado">Estado:</label>
-                <div class="toggle" onclick="Animatedtoggle()">
-                    <div class="toggle_button"></div>
-                </div>
-            </div>
-            <button type="submit">Guardar</button>
-            <button>Buscar</button>
-            <button type="submit">Modificar</button>
-            <button>Eliminar</button>
-            <button type="reset">Cancelar</button>
-        </form>
-    </div>
     <div class="container_table">
-        <div class="table_title">Datos de tipo de canino</div>
+        <a class="buttonAgregar" href="insertarTipoCanino.php">Agregar</a>
+        <div class="table_title">Datos del tipo de canino</div>
         <div class="table_header">Código</div>
         <div class="table_header">Descripción</div>
         <div class="table_header">Estado</div>
+        <div class="table_header">Opciones</div>
         <?php $resultado = mysqli_query($conexion, $tipoCanino);
 
         while ($row = mysqli_fetch_assoc($resultado)) { ?>
             <div class="table_item"><?php echo $row['id']; ?></div>
             <div class="table_item"><?php echo $row['descripcion']; ?></div>
             <div class="table_item"><?php echo $row['estado']; ?></div>
+            <div class="table_item">
+                <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                <a class="buttonME" href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+            </div>
         <?php }
         mysqli_free_result($resultado); ?>
     </div>

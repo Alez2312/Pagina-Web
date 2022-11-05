@@ -1,16 +1,18 @@
 body {
-  background: rgb(135, 198, 223);
+  background: rgb(175, 118, 180);
   background: linear-gradient(
     90deg,
-    rgb(118, 166, 180) 0%,
+    rgba(175, 118, 180, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
 }
-.title, nav {
-    text-align: center;
-    position: relative;
-    z-index: 2;
+.title,
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
+
 ul {
   text-transform: uppercase;
   text-align: left;
@@ -29,7 +31,7 @@ ul li {
   position: relative;
   padding: 15px 20px;
   background: #689ed1;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -39,153 +41,93 @@ ul li {
 }
 ul li:hover {
   background: #ffffff;
+  color: #f7f7f7;
+}
+.buttonAgregar {
+  border: #000000 solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  color: #000000;
+  margin: 7px;
+  font-size: large;
+}
+.buttonAgregar:hover{
+  background-color: #689ed1;
+  color: white;
+}
+
+.container_table {
+  margin: 40px auto;
+  width: 45%;
+  background: #dedede;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 40px;
+  box-shadow: 0 0 20px #333;
+}
+
+.table_title {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.table_header,
+.table_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table_header {
+  font-weight: bold;
+}
+
+.table_item {
+  padding: 5px;
+  font-size: 20px;
+}
+ul li:hover {
+  background: #ffffff;
   color: #000000;
 }
-.container {
-    position: relative;
-    margin: 20px auto;
-    width: 45%;
-    background: #dedede;
-    border-radius: 5px;
-}
 
-.tipoCanino_form {
-    padding: 20px 110px;
-}
-.tipoCanino_form .font {
-    font-size: 18px;
-}
-.tipoCanino_form .font2 {
-    padding: 15px;
-}
-.tipoCanino_form .font3 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: left;
-  padding: 15px 0 15px 0;
-}
-.id {
-    margin: 0 35px 0 15px;
-}
-.estado {
-    margin: 0 40px 0 15px;
-    padding: auto;
-}
-.tipoCanino_form input {
-    height: 40px;
-    width: 350px;
-    padding: 0 5px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid silver;
-}
-.tipoCanino_form button {
-    margin: 45px 0 30px 0;
-    height: 45px;
-    width: 120px;
-    font-size: 20px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    background: #689ed1;
-    color: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #6ab4c7;
-    transition: .5s;
-}
-.tipoCanino_form button:hover {
-    background: #ffffff;
-    color: #000000;
-}
-.toggle {
+ul ul {
+  display: none;
   position: absolute;
-  width: 60px;
-  height: 35px;
-  background: red;
-  border-radius: 30px;
-  margin-left: 90px;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 0;
 }
 
-.toggle .toggle_button {
-  position: relative;
-  top: 2px;
-  left: 2px;
-  width: 30px;
-  height: 30px;
-  background: white;
-  border-radius: 50%;
+ul ul li {
+  float: none;
+  width: 150px;
+}
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+ul li:hover > ul {
+  display: block;
+}
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
   cursor: pointer;
+  font-weight: bold;
+  color: gray;
   transition: 0.3s;
 }
-
-.toggle.active {
-  background: green;
+.buttonME:hover {
+  color: black;
 }
-
-.toggle.active .toggle_button{
-  left: 27px;
-}
-
-ul li:hover {
-    background: #ffffff;
-    color: #000000;
-  }
-  
-  ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    padding: 0;
-  }
-  
-  ul ul li {
-    float: none;
-    width: 150px;
-  }
-  ul ul a {
-    line-height: 120%;
-    padding: 10px 15px;
-  }
-  ul li:hover > ul {
-    display: block;
-  }
-  
-  .container_table {
-    margin: 40px auto;
-    width: 45%;
-    background: #dedede;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 40px;
-    box-shadow: 0 0 20px #333;
-  }
-
-  .table_title {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background-color: blue;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 30px;
-  }
-
-  .table_header, .table_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .table_header {
-    font-weight: bold;
-  }
-
-  .table_item {
-    padding: 5px;
-    font-size: 20px; 
-  }

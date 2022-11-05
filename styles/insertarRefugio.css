@@ -184,3 +184,7 @@ ul ul a {
 ul li:hover > ul {
   display: block;
 }
+
+.small {
+  color: red;
+}

@@ -1,13 +1,3 @@
-<?php
-if (isset($_POST['submit'])) {
-    $id = $_POST["id"];
-    $nombre = $_POST["nombre"];
-    $direccion = $_POST["direccion"];
-    $telefono = $_POST["telefono"];
-    $celular = $_POST["celular"];
-    $estado = $_POST["estado"];
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +12,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <h2 class="title">Agregar refugio</h2>
-        <form class="refugio_form" method="POST" name="refugio" id="refugio" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" onsubmit="return validated()">
+        <form class="refugio_form" method="POST" name="refugio" id="refugio" action="procesoInsertarRefugio.php" onsubmit="return validated()">
             <div class="font">
                 <label class="id">Código:</label>
                 <input type="number" name="id" id="id">
@@ -56,10 +46,7 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
             <button type="submit" name="submit">Guardar</button>
-            <button type="reset" name="reset">Cancelar</button>
-            <?php
-            include("validarRefugio.php");
-            ?>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/refugio.js"></script>

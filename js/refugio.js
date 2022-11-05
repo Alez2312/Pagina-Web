@@ -20,23 +20,23 @@ function validated() {
   let counter = 0;
 
   if (id == null || id.length == 0) {
-    msgId.innerHTML = "El código está vacio";
+    msgId.innerHTML = "* El código está vacio";
     validation = false;
   }
   if (nombre == null || nombre.length == 0) {
-    msgNombre.innerHTML = "El nombre está vacio";
+    msgNombre.innerHTML = "* El nombre está vacio";
     validation = false;
   }
   if (direccion == null || direccion.length == 0) {
-    msgId.innerHTML = "La dirección está vacio";
+    msgDireccion.innerHTML = "* La dirección está vacio";
     validation = false;
   }
   if (telefono == null || telefono.length == 0) {
-    msgId.innerHTML = "El teléfono está vacio";
+    msgTelefono.innerHTML = "* El teléfono está vacio";
     validation = false;
   }
   if (celular == null || celular.length == 0) {
-    msgId.innerHTML = "El celular está vacio";
+    msgCelular.innerHTML = "* El celular está vacio";
     validation = false;
   }
   if (validation == true){
