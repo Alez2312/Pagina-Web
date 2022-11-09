@@ -86,21 +86,6 @@ ul li:hover {
   justify-content: left;
   padding: 15px 0 15px 0;
 }
-.canino_form .font8 {
-  align-items: flex-start;
-  justify-content: left;
-  padding: 15px 0 15px 0;
-}
-.canino_form .font9 {
-  align-items: flex-start;
-  justify-content: left;
-  padding: 15px 0 15px 0;
-}
-.canino_form .font10 {
-  align-items: flex-start;
-  justify-content: left;
-  padding: 15px 0 15px 0;
-}
 .canino_form .font11 {
   align-items: flex-start;
   justify-content: left;
@@ -138,7 +123,7 @@ ul li:hover {
   margin: 0 115px 0 0;
 }
 .estado {
-  margin: 10px 25px 0 0;
+  margin: 10px 30% 0 0;
   position: absolute;
 }
 .canino_form input {
@@ -185,7 +170,7 @@ ul li:hover {
   height: 35px;
   background: red;
   border-radius: 30px;
-  margin-left: 90px;
+  margin-left: 21.5%;
 }
 
 .toggle .toggle_button {

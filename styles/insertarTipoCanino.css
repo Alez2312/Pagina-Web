@@ -44,6 +44,15 @@ ul li:hover {
   color: #f7f7f7;
 }
 
+.container {
+  z-index: 1;
+  position: relative;
+  margin: 20px auto;
+  width: 45%;
+  background: #dedede;
+  border-radius: 5px;
+}
+
 .tipoCanino_form {
   padding: 20px 110px;
 }

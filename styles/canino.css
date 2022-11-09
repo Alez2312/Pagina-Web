@@ -68,7 +68,7 @@ ul li:hover {
 
 .table_title {
   grid-column-start: 1;
-  grid-column-end: 13;
+  grid-column-end: 10;
   background-color: blue;
   color: white;
   display: flex;

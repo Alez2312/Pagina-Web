@@ -10,7 +10,7 @@ $refugio = "SELECT * FROM refugio";
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Canino</title>
     <link rel="stylesheet" href="../styles/insertarCanino.css">
 </head>
@@ -40,28 +40,13 @@ $refugio = "SELECT * FROM refugio";
                 <small id="msgFecha_adopcion_final" class="small"></small>
             </div>
             <div class="font font5">
-                <label class="latitud">Latitud:</label>
-                <input type="text" name="latitud" id="latitud">
-                <small id="msgLatitud" class="small"></small>
-            </div>
-            <div class="font font6">
-                <label class="longitud">Longitud:</label>
-                <input type="text" name="longitud" id="longitud">
-                <small id="msgLongitud" class="small"></small>
-            </div>
-            <div class="font font7">
-                <label class="carnet">Carnet:</label>
-                <input type="text" name="carnet" id="carnet">
-                <small id="msgCarnet" class="small"></small>
-            </div>
-            <div class="font font8">
                 <label class="foto">Foto:</label>
                 <input type="text" name="foto" id="foto">
                 <small id="msgFoto" class="small"></small>
             </div>
-            <div class="font font9">
+            <div class="font font6">
                 <label class="id_tipo_canino">Tipo canino:</label>
-                <select class="select" name="id_tipo_canino" id="id_tipo_canino">
+                <select class="select" name="id_tipo_canino" id="">
 
                     <?php $resultado = mysqli_query($conexion, $tipoCanino);
 
@@ -73,9 +58,9 @@ $refugio = "SELECT * FROM refugio";
                 </select>
                 <small id="msgId_tipo_canino" class="small"></small>
             </div>
-            <div class="font font10">
+            <div class="font font7">
                 <label class="id_refugio">Refugio:</label>
-                <select class="select" name="id_refugio" id="id_refugio">
+                <select class="select" name="id_refugio" id="">
                     
                     <?php $resultado = mysqli_query($conexion, $refugio);
 
