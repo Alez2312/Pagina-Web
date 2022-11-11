@@ -11,9 +11,10 @@ $estado = $_POST["estado"];
 
 $conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
 
-$insertar = "INSERT INTO canino(id, nombre, fecha_adopcion_inicial, fecha_adopcion_final, foto, id_tipo_canino, id_refugio, estado) 
-            VALUES ('$id','$nombre', '$fecha_adopcion_inicial', '$fecha_adopcion_final', '$foto', '$id_tipo_canino', '$id_refugio' ,'$estado')";
-$resultado = mysqli_query($conexion, $insertar);
+$actualizar = "UPDATE canino SET nombre='$nombre', fecha_adopcion_inicial='$fecha_adopcion_inicial', fecha_adopcion_final='$fecha_adopcion_final', foto='$foto', 
+                                 id_tipo_canino='$id_tipo_canino', id_refugio='$id_refugio', estado='$estado' WHERE id='$id'";
+
+$resultado = mysqli_query($conexion, $actualizar);
 if ($resultado) {
     echo "Datos guardados";
 } else {

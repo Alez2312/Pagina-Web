@@ -36,7 +36,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font4">
                 <label class="fecha_adopcion_final">Fecha adopción final:</label>
-                <input type="date" name="fecha_adopcion_final" id="fecha_adopcion_final">
+                <input type="date" pattern="dd-mm-yyyy" name="fecha_adopcion_final" id="fecha_adopcion_final">
                 <small id="msgFecha_adopcion_final" class="small"></small>
             </div>
             <div class="font font5">
@@ -46,7 +46,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font6">
                 <label class="id_tipo_canino">Tipo canino:</label>
-                <select class="select" name="id_tipo_canino" id="">
+                <select class="select" name="id_tipo_canino" id="id_tipo_canino">
 
                     <?php $resultado = mysqli_query($conexion, $tipoCanino);
 
@@ -56,7 +56,6 @@ $refugio = "SELECT * FROM refugio";
                         </option>
                     <?php } ?>
                 </select>
-                <small id="msgId_tipo_canino" class="small"></small>
             </div>
             <div class="font font7">
                 <label class="id_refugio">Refugio:</label>
@@ -70,9 +69,8 @@ $refugio = "SELECT * FROM refugio";
                         </option>
                     <?php } ?>
                 </select>
-                <small id="msgId_refugio" class="small"></small>
             </div>
-            <div class="font font11">
+            <div class="font font8">
                 <label class="estado">Estado:</label>
                 <div class="toggle" value="0" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>

@@ -34,7 +34,7 @@ $refugio = "SELECT * FROM refugio";
                 </li>
             </ul>
         </nav>
-    </div>    
+    </div>
     <div class="container_table">
         <a class="buttonAgregar" href="insertarRefugio.php">Agregar</a>
         <div class="table_title">Datos de refugio</div>

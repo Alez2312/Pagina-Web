@@ -43,136 +43,56 @@ ul li:hover {
   background: #ffffff;
   color: #f7f7f7;
 }
-.container {
-  position: absolute;
-  z-index: 1;
-  margin: 40px 28%;
-  width: 45%;
+.buttonAgregar {
+  border: #000000 solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  color: #000000;
+  margin: 7px;
+  font-size: large;
+}
+.buttonAgregar:hover{
+  background-color: #689ed1;
+  color: white;
+}
+
+.container_table {
+  margin: 50px auto;
   background: #dedede;
   border-radius: 5px;
+  display: grid;
+  grid-auto-rows: 40px;
+  box-shadow: 0 0 20px #333;
 }
 
-.adultoMayor_form {
-  padding: 20px 110px;
-}
-.adultoMayor_form .font {
-  font-size: 18px;
-}
-.adultoMayor_form .font2 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font3 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font4 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font5 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font6 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font7 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font8 {
-  padding-top: 15px;
-}
-.adultoMayor_form .font9 {
-  padding: 15px 0 15px 0;
-}
-
-.id {
-  margin: 0 78px 0 0;
-}
-.nombre1 {
-  margin: 0 20px 0 0;
-}
-.nombre2 {
-  margin: 0 5px 0 0;
-}
-.apellido1 {
-  margin: 0 15px 0 0;
-}
-.direccion {
-  margin: 0 55px 0 0;
-}
-.celular {
-  margin: 0 75px 0 0;
-}
-.foto {
-  margin: 0 95px 0 0;
-}
-.estado {
-  margin: 0 90px 0 0;
-  padding: auto;
-}
-.adultoMayor_form input {
-  height: 40px;
-  width: 350px;
-  padding: 0 5px;
-  font-size: 18px;
-  outline: none;
-  border: 1px solid silver;
-}
-.adultoMayor_form button {
-  margin: 45px 0 30px 0;
-  height: 45px;
-  width: 120px;
-  font-size: 20px;
-  outline: none;
-  cursor: pointer;
+.table_title {
+  grid-column-start: 1;
+  grid-column-end: 11;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  background: #689ed1;
-  color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #6ab4c7;
-  transition: 0.5s;
-}
-.adultoMayor_form button:hover {
-  background: #ffffff;
-  color: #000000;
+  font-size: 30px;
 }
 
-:root {
-  --color-green: green;
-  --color-red: red;
-  --color-button: #fdffff;
-  --color-black: #000;
-}
-.switch-button {
-  display: inline-table;
-}
-.switch-button .switch-button__checkbox {
-  display: none;
-}
-.switch-button .switch-button__label {
-  background-color: var(--color-red);
-  width: 50px;
-  height: 30px;
-  border-radius: 30px;
-  display: inline-block;
-  position: relative;
-}
-.switch-button .switch-button__label:before {
-  transition: 0.2s;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: var(--color-button);
-  content: "";
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label {
-  background-color: var(--color-green);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
-  transform: translateX(20px);
+.table_header,
+.table_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.table_header {
+  font-weight: bold;
+}
+
+.table_item {
+  padding: 5px;
+  font-size: 20px;
+}
 ul li:hover {
   background: #ffffff;
   color: #000000;
@@ -197,4 +117,15 @@ ul ul a {
 }
 ul li:hover > ul {
   display: block;
+}
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
 }

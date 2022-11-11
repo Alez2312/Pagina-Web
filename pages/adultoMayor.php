@@ -1,3 +1,7 @@
+<?php
+include("conexion.php");
+$adultoMayor = "SELECT * FROM adultomayor";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refugio</title>
+    <title>Adulto mayor</title>
     <link rel="stylesheet" href="../styles/adultoMayor.css">
 </head>
 
@@ -30,56 +34,39 @@
             </ul>
         </nav>
     </div>
-    <div class="container">
-        <form class="adultoMayor_form" method="post" name="adultoMayor" onsubmit="return validated()">
-            <div class="font">
-                <label class="id">Cédula:</label>
-                <input type="number" name="idAdultoMayor" id="idAdultoMayor">
+    <div class="container_table">
+        <a class="buttonAgregar" href="insertarAdultoMayor.php">Agregar</a>
+        <div class="table_title">Datos del Adulto mayor</div>
+        <div class="table_header">Cédula</div>
+        <div class="table_header">Primer nombre</div>
+        <div class="table_header">Segundo nombre</div>
+        <div class="table_header">Primer apellido</div>
+        <div class="table_header">Segundo apellido</div>
+        <div class="table_header">Celular</div>
+        <div class="table_header">Dirección</div>
+        <div class="table_header">Foto</div>
+        <div class="table_header">Estado</div>
+        <div class="table_header">Opciones</div>
+        <?php $resultado = mysqli_query($conexion, $adultoMayor);
+
+        while ($row = mysqli_fetch_assoc($resultado)) { ?>
+            <div class="table_item"><?php echo $row['id']; ?></div>
+            <div class="table_item"><?php echo $row['nombre1']; ?></div>
+            <div class="table_item"><?php echo $row['nombre2']; ?></div>
+            <div class="table_item"><?php echo $row['apellido1']; ?></div>
+            <div class="table_item"><?php echo $row['apellido2']; ?></div>
+            <div class="table_item"><?php echo $row['celular']; ?></div>
+            <div class="table_item"><?php echo $row['direccion']; ?></div>
+            <div class="table_item"><?php echo $row['foto']; ?></div>
+            <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+            <div class="table_item">
+                <a class="buttonME" href="modificarAdultoMayor.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                <a class="buttonME" href="eliminarAdultoMayor.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </div>
-            <div class="font font2">
-                <label class="nombre1">Primer nombre:</label>
-                <input type="text" name="nombre1" id="nombre1">
-            </div>
-            <div class="font font3">
-                <label class="nombre2">Segundo nombre:</label>
-                <input type="text" name="nombre2" id="nombre2">
-            </div>
-            <div class="font font4">
-                <label class="apellido1">Primer apellido:</label>
-                <input type="text" name="apellido1" id="apellido1">
-            </div>
-            <div class="font font5">
-                <label class="apellido2">Segundo apellido:</label>
-                <input type="text" name="apellido2" id="apellido2">
-            </div>
-            <div class="font font6">
-                <label class="celular">Celular:</label>
-                <input type="text" name="celular" id="celular">
-            </div>
-            <div class="font font7">
-                <label class="direccion">Dirección:</label>
-                <input type="text" name="direccion" id="direccion">
-            </div>
-            <div class="font font8">
-                <label class="foto">Foto:</label>
-                <input type="text" name="foto" id="foto">
-            </div>
-            <div class="font font9">
-                <label class="estado">Estado:</label>
-                <div class="switch-button">
-                    <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
-                    <label for="switch-label" class="switch-button__label"></label>
-                </div>
-            </div>
-            <button type="submit">Guardar</button>
-            <button>Buscar</button>
-            <button type="submit">Modificar</button>
-            <button>Eliminar</button>
-            <button type="reset">Cancelar</button>
-        </form>
+        <?php }
+        mysqli_free_result($resultado); ?>
     </div>
-    </div>
-    <script src="../login.js"></script>
+    <script src="../adultoMayor.js"></script>
 </body>
 
 </html>

@@ -86,7 +86,7 @@ ul li:hover {
   justify-content: left;
   padding: 15px 0 15px 0;
 }
-.canino_form .font11 {
+.canino_form .font8 {
   align-items: flex-start;
   justify-content: left;
   padding: 15px 0 15px 0;
@@ -103,15 +103,6 @@ ul li:hover {
 }
 .fecha_adopcion_final {
   margin: 0 20px 0 0;
-}
-.latitud {
-  margin: 0 120px 0 0;
-}
-.longitud {
-  margin: 0 105px 0 0;
-}
-.carnet {
-  margin: 0 125px 0 0;
 }
 .foto {
   margin: 0 140px 0 0;

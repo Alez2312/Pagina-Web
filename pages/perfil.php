@@ -33,27 +33,26 @@
             </nav>
         </div>
         <div class="container">
-            <form class="perfil_form" method="post" name="perfil" onsubmit="return validated()">
+            <form class="perfil_form" method="post" name="perfil" action="procesoInsertarPerfil.php" onsubmit="return validated()">
                 <div class="font">
                     <label class="id">Código de perfil:</label>
                     <input type="number" name="cod_perfil" id="cod_perfil">
+                    <small id="msgCod_perfil" class="small"></small>
                 </div>
                 <div class="font font2">
-                    <label class="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <label class="descripcion">Descripción:</label>
+                    <input type="text" name="descripcion" id="descripcion">
+                    <small id="msgDescripcion" class="small"></small>
                 </div>
                 <div class="font font3">
                     <label class="estado">Estado:</label>
-                    <div class="switch-button">
-                        <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
-                        <label for="switch-label" class="switch-button__label"></label>
+                    <div class="toggle" value="0" onclick="Animatedtoggle()">
+                        <div class="toggle_button"></div>
+                        <input type="hidden" name="estado" id="estado">
                     </div>
                 </div>
                 <button type="submit">Guardar</button>
-                <button>Buscar</button>
-                <button type="submit">Modificar</button>
-                <button>Eliminar</button>
-                <button type="reset">Cancelar</button>
+                <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/inicio.php'" type="reset">Cancelar</button>
             </form>
         </div>
         <script src="../js/perfil.js"></script>

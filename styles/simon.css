@@ -1,8 +1,8 @@
 body {
-  background: rgb(135, 198, 223);
+  background: rgb(175, 118, 180);
   background: linear-gradient(
     90deg,
-    rgb(118, 166, 180) 0%,
+    rgba(175, 118, 180, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
 }
@@ -12,6 +12,7 @@ nav {
   position: relative;
   z-index: 2;
 }
+
 ul {
   text-transform: uppercase;
   text-align: left;
@@ -30,7 +31,7 @@ ul li {
   position: relative;
   padding: 15px 20px;
   background: #689ed1;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -40,7 +41,7 @@ ul li {
 }
 ul li:hover {
   background: #ffffff;
-  color: #000000;
+  color: #f7f7f7;
 }
 .buttonAgregar {
   border: #000000 solid 1px;
@@ -51,104 +52,47 @@ ul li:hover {
   margin: 7px;
   font-size: large;
 }
-.container {
-  position: relative;
-  margin: 20px auto;
-  width: 45%;
+.buttonAgregar:hover{
+  background-color: #689ed1;
+  color: white;
+}
+
+.container_table {
+  margin: 40px auto;
   background: #dedede;
   border-radius: 5px;
+  display: grid;
+  grid-auto-rows: 40px;
+  box-shadow: 0 0 20px #333;
 }
 
-.simon_form {
-  padding: 20px 110px;
-}
-.simon_form .font {
-  font-size: 18px;
-}
-.simon_form .font2 {
-  padding-top: 15px;
-}
-.simon_form .font3 {
-  padding-top: 15px;
-}
-.simon_form .font4 {
-  padding-top: 15px;
-}
-.id {
-  margin: 0 70px 0 0;
-}
-.ubicacion {
-  margin: 0 12px 0 0;
-}
-.estado {
-  margin: 0 40px 0 0;
-  padding: auto;
-}
-.simon_form input {
-  height: 40px;
-  width: 350px;
-  padding: 0 5px;
-  font-size: 18px;
-  outline: none;
-  border: 1px solid silver;
-}
-.simon_form button {
-  margin: 45px 0 30px 0;
-  height: 45px;
-  width: 120px;
-  font-size: 20px;
-  outline: none;
-  cursor: pointer;
+.table_title {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  background: #689ed1;
-  color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #6ab4c7;
-  transition: 0.5s;
-}
-.simon_form button:hover {
-  background: #ffffff;
-  color: #000000;
+  font-size: 30px;
 }
 
-:root {
-  --color-green: green;
-  --color-red: red;
-  --color-button: #fdffff;
-  --color-black: #000;
-}
-.switch-button {
-  display: inline-table;
-}
-.switch-button .switch-button__checkbox {
-  display: none;
-}
-.switch-button .switch-button__label {
-  background-color: var(--color-red);
-  width: 50px;
-  height: 30px;
-  border-radius: 30px;
-  display: inline-block;
-  position: relative;
-}
-.switch-button .switch-button__label:before {
-  transition: 0.2s;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: var(--color-button);
-  content: "";
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label {
-  background-color: var(--color-green);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
-  transform: translateX(20px);
+.table_header,
+.table_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.table_header {
+  font-weight: bold;
+}
+
+.table_item {
+  padding: 5px;
+  font-size: 20px;
+}
 ul li:hover {
   background: #ffffff;
   color: #000000;
@@ -173,4 +117,15 @@ ul ul a {
 }
 ul li:hover > ul {
   display: block;
+}
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
 }

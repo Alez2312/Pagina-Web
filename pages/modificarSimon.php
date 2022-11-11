@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $id = $_GET["id"];
-$tipocanino = "SELECT * FROM tipocanino WHERE id = '$id'";
+$simon = "SELECT * FROM simon WHERE id = '$id'";
 ?>
 
 <!DOCTYPE html>
@@ -11,15 +11,15 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id = '$id'";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipo de canino</title>
-    <link rel="stylesheet" href="../styles/insertarTipoCanino.css">
+    <title>Simón</title>
+    <link rel="stylesheet" href="../styles/insertarSimon.css">
 </head>
 
 <body>
     <div class="container">
-        <h2 class="title">Modificar tipo de canino</h2>
-        <form class="tipoCanino_form" method="POST" name="tipoCanino" id="tipoCanino" action="procesoModificarTipoCanino.php" onsubmit="return validated()">
-            <?php $resultado = mysqli_query($conexion, $tipocanino);
+        <h2 class="title">Modificar Simón</h2>
+        <form class="simon_form" method="POST" name="simon" id="simon" action="procesoModificarSimon.php" onsubmit="return validated()">
+            <?php $resultado = mysqli_query($conexion, $simon);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
@@ -41,10 +41,10 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/simon.php'" type="reset">Cancelar</button>
         </form>
     </div>
-    <script src="../js/tipoCanino.js"></script>
+    <script src="../js/simon.js"></script>
 </body>
 
 </html>

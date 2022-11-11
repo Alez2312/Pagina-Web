@@ -73,3 +73,13 @@ body {
     border: 1px solid #EF9A9A;
     display: none;
 }
+
+.error{
+    background-color: red;
+    color: black;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+
+}

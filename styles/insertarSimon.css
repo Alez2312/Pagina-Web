@@ -43,51 +43,42 @@ ul li:hover {
   background: #ffffff;
   color: #f7f7f7;
 }
+
 .container {
-  position: absolute;
   z-index: 1;
-  margin: 40px 28%;
+  position: relative;
+  margin: 20px auto;
   width: 45%;
   background: #dedede;
   border-radius: 5px;
 }
 
-.usuario_form {
+.simon_form {
   padding: 20px 110px;
 }
-.usuario_form .font {
+.simon_form .font {
   font-size: 18px;
 }
-.usuario_form .font2 {
+.simon_form .font2 {
   padding-top: 15px;
 }
-.usuario_form .font3 {
-  padding-top: 15px;
-}
-.usuario_form .font4 {
-  padding-top: 15px;
-}
-.usuario_form .font5 {
+.simon_form .font3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
   padding: 15px 0 15px 0;
 }
 
-.cc {
-  margin: 0 30px 0 0;
+.id {
+  margin: 0 43px 0 0;
 }
-.nombre {
-  margin: 0 20px 0 0;
-}
-.clave   {
-  margin: 0 37px 0 0;
-}
-.perfil {
-  margin: 0 40px 0 0;
+.descripcion {
+  margin: 0 10px 0 0;
 }
 .estado {
-  margin: 0 30px 0 0;
-  padding: auto;
+  margin: 10px 25px 0 0;
 }
-.usuario_form input {
+.simon_form input {
   height: 40px;
   width: 350px;
   padding: 0 5px;
@@ -95,7 +86,7 @@ ul li:hover {
   outline: none;
   border: 1px solid silver;
 }
-.usuario_form button {
+.simon_form button {
   margin: 45px 0 30px 0;
   height: 45px;
   width: 120px;
@@ -109,9 +100,49 @@ ul li:hover {
   border: 1px solid #6ab4c7;
   transition: 0.5s;
 }
-.usuario_form button:hover {
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
+}
+.simon_form button:hover {
   background: #ffffff;
   color: #000000;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: red;
+  border-radius: 30px;
+  margin-left: 107px;
+}
+
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: green;
+}
+
+.toggle.active .toggle_button {
+  left: 27px;
 }
 
 ul li:hover {
@@ -142,8 +173,4 @@ ul li:hover > ul {
 
 .small {
   color: red;
-}
-.select{
-  height: 20px;
-  width: 100px;
 }

@@ -52,42 +52,65 @@ ul li:hover {
   border-radius: 5px;
 }
 
-.usuario_form {
+.adultoMayor_form {
   padding: 20px 110px;
 }
-.usuario_form .font {
+.adultoMayor_form .font {
   font-size: 18px;
 }
-.usuario_form .font2 {
+.adultoMayor_form .font2 {
   padding-top: 15px;
 }
-.usuario_form .font3 {
+.adultoMayor_form .font3 {
   padding-top: 15px;
 }
-.usuario_form .font4 {
+.adultoMayor_form .font4 {
   padding-top: 15px;
 }
-.usuario_form .font5 {
+.adultoMayor_form .font5 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font6 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font7 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font8 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font9 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
   padding: 15px 0 15px 0;
 }
 
-.cc {
-  margin: 0 30px 0 0;
+.id {
+  margin: 0 72px 0 0;
 }
-.nombre {
-  margin: 0 20px 0 0;
+.nombre1 {
+  margin: 0 15px 0 0;
 }
-.clave   {
-  margin: 0 37px 0 0;
+.nombre2 {
+  margin: 0 2px 0 0;
 }
-.perfil {
-  margin: 0 40px 0 0;
+.apellido1 {
+  margin: 0 13px 0 0;
+}
+.celular {
+  margin: 0 73px 0 0;
+}
+.direccion {
+  margin: 0 55px 0 0;
+}
+.foto {
+  margin: 0 93px 0 0;
 }
 .estado {
-  margin: 0 30px 0 0;
-  padding: auto;
+  margin: 10px 30% 0 0;
 }
-.usuario_form input {
+.adultoMayor_form input {
   height: 40px;
   width: 350px;
   padding: 0 5px;
@@ -95,7 +118,7 @@ ul li:hover {
   outline: none;
   border: 1px solid silver;
 }
-.usuario_form button {
+.adultoMayor_form button {
   margin: 45px 0 30px 0;
   height: 45px;
   width: 120px;
@@ -109,9 +132,38 @@ ul li:hover {
   border: 1px solid #6ab4c7;
   transition: 0.5s;
 }
-.usuario_form button:hover {
+.adultoMayor_form button:hover {
   background: #ffffff;
   color: #000000;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: red;
+  border-radius: 30px;
+  margin-left: 15.5%;
+}
+
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: green;
+}
+
+.toggle.active .toggle_button {
+  left: 27px;
 }
 
 ul li:hover {
@@ -138,12 +190,4 @@ ul ul a {
 }
 ul li:hover > ul {
   display: block;
-}
-
-.small {
-  color: red;
-}
-.select{
-  height: 20px;
-  width: 100px;
 }

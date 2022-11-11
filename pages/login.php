@@ -10,17 +10,30 @@
 <body>
     <div class="container">
         <h1 class="label">Compañeros por similitud</h1>
-        <form class="login_form" action="inicio.php" method="post" name="form" onsubmit="return validated()">
+        <hr>
+        <?php
+        if (isset($_GET['error'])) {
+        ?>
+            <p class="error">
+                <?php
+                echo $_GET['error']
+                ?>
+            </p>
+        <?php
+        }
+        ?>
+        <hr>
+        <form class="login_form" action="procesoLogin.php" method="POST" name="form">
             <div class="font">Usuario:</div>
-            <input id="username" autocomplete="off" type="text" name="username">
-            <div id="username_error">Por favor ingrese un usuario</div>
+            <input type="text" name="cc" autocomplete="off" placeholder="Ingrese su usuario">
+
             <div class="font font2">Contraseña</div>
-            <input id="password" type="password" name="password">
-            <div id="password_error">Por favor ingrese una contraseña</div>
+            <input type="password" name="clave" placeholder="Ingrese su clave">
+
             <button type="submit">Ingresar</button>
+            <a href="usuario.php">Registrarse</a>
         </form>
     </div>
-    <script src="../js/login.js"></script>
 </body>
 
 </html>
