@@ -50,7 +50,7 @@ function validated() {
     validation = false;
   }
   if (validation == true){
-    alert(`EL refugio ${nombre} se registró con éxito`);
+    alert(`El adulto mayor ${nombre1} ${apellido1} se registró con éxito`);
   }
   return validation;
 }
