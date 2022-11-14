@@ -8,30 +8,37 @@
 </head>
 
 <body>
+    <h1 class="title">Compañeros por similitud</h1>
     <div class="container">
-        <h1 class="label">Compañeros por similitud</h1>
-        <hr>
-        <?php
-        if (isset($_GET['error'])) {
-        ?>
-            <p class="error">
-                <?php
-                echo $_GET['error']
-                ?>
-            </p>
-        <?php
-        }
-        ?>
-        <hr>
         <form class="login_form" action="procesoLogin.php" method="POST" name="form">
-            <div class="font">Usuario:</div>
-            <input type="text" name="cc" autocomplete="off" placeholder="Ingrese su usuario">
+            <h2 class="title">Iniciar sesión</h2>
+            <hr class="hr">
+            <?php
+            if (isset($_GET['error'])) {
+            ?>
+                <p class="error">
+                    <?php
+                    echo $_GET['error']
+                    ?>
+                </p>
+            <?php
+            }
+            ?>
+            <hr class="hr">
 
-            <div class="font font2">Contraseña</div>
-            <input type="password" name="clave" placeholder="Ingrese su clave">
+            <div class="form_div">
+                <input class="form_input" type="number" name="cc" autocomplete="off" placeholder=" ">
+                <label class="form_label" for="">Número de documento</label>
+            </div>
 
-            <button type="submit">Ingresar</button>
-            <a href="usuario.php">Registrarse</a>
+            <div class="form_div">
+                <input class="form_input" type="password" name="clave" placeholder=" ">
+                <label class="form_label" for="">Clave</label>
+            </div>
+
+            <button class="form_button" type="submit">Ingresar</button>
+            <div><b>¿No tienes cuenta?</b></div>
+            
         </form>
     </div>
 </body>
