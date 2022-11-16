@@ -1,10 +1,14 @@
 <?php
 include("conexion.php");
-$canino = "SELECT * FROM canino";
+$canino = "SELECT *, tipocanino.descripcion, refugio.nombre 
+            FROM canino 
+            INNER JOIN tipocanino ON canino.id_tipo_canino=tipocanino.id
+            INNER JOIN refugio ON canino.id_refugio=refugio.id";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,10 +26,8 @@ $canino = "SELECT * FROM canino";
                 <li><a class="link_a" href="tipoCanino.php">Tipo de canino</a></li>
                 <li><a class="link_a" href="refugio.php">Refugio</a></li>
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
-                <li><a class="link_a" href="simon.php">Simon</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="monitoreo.php">Monitoreo</a></li>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
@@ -33,9 +35,15 @@ $canino = "SELECT * FROM canino";
                 </li>
             </ul>
         </nav>
-    </div>    
+    </div>
     <div class="container_table">
         <a class="buttonAgregar" href="insertarCanino.php">Agregar</a>
+        <form action="" method="GET">
+            <div class="buscar">
+                <input class="input_busqueda" type="text" name="busqueda">
+                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
+            </div>
+        </form>
         <div class="table_title">Datos del canino</div>
         <div class="table_header">Código</div>
         <div class="table_header">Nombre</div>
@@ -46,23 +54,43 @@ $canino = "SELECT * FROM canino";
         <div class="table_header">Refugio</div>
         <div class="table_header">Estado</div>
         <div class="table_header">Opciones</div>
-        <?php $resultado = mysqli_query($conexion, $canino);
+        <?php
+        if (isset($_GET['enviar'])) {
+            $busqueda = $_GET['busqueda'];
+            $consulta = $conexion->query("SELECT * FROM canino WHERE id LIKE '%$busqueda%'");
 
-        while ($row = mysqli_fetch_assoc($resultado)) { ?>
-            <div class="table_item"><?php echo $row['id']; ?></div>
-            <div class="table_item"><?php echo $row['nombre']; ?></div>
-            <div class="table_item"><?php echo $row['fecha_adopcion_inicial']; ?></div>
-            <div class="table_item"><?php echo $row['fecha_adopcion_final']; ?></div>
-            <div class="table_item"><?php echo $row['foto']; ?></div>
-            <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
-            <div class="table_item"><?php echo $row['id_refugio']; ?></div>
-            <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
-            <div class="table_item">
-                <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
-            </div>
+            while ($row = $consulta->fetch_array()) { ?>
+                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item"><?php echo $row['fecha_adopcion_inicial']; ?></div>
+                <div class="table_item"><?php echo $row['fecha_adopcion_final']; ?></div>
+                <div class="table_item"><?php echo $row['foto']; ?></div>
+                <div class="table_item"><?php echo $row['descripcion']; ?></div>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
+                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item">
+                    <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                </div>
+            <?php }
+        } else {
+            $resultado = mysqli_query($conexion, $canino);
+
+            while ($row = mysqli_fetch_assoc($resultado)) { ?>
+                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item"><?php echo $row['fecha_adopcion_inicial']; ?></div>
+                <div class="table_item"><?php echo $row['fecha_adopcion_final']; ?></div>
+                <div class="table_item"><?php echo $row['foto']; ?></div>
+                <div class="table_item"><?php echo $row['descripcion']; ?></div>
+                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item">
+                    <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                </div>
         <?php }
-        mysqli_free_result($resultado); ?>
+        } ?>
     </div>
     <script src="../js/canino.js"></script>
 </body>

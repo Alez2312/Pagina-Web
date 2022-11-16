@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-image: url("../fondo.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 170%;
   font-family: sans-serif;
 }
 .title,
@@ -33,7 +33,7 @@ ul li {
   margin-right: -5px;
   position: relative;
   padding: 15px 20px;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
@@ -51,8 +51,9 @@ ul li:hover {
   position: relative;
   margin: 20px auto;
   width: 45%;
-  background: #dedede;
+  background: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 20px #333;
 }
 
 .refugio_form {
@@ -111,7 +112,7 @@ ul li:hover {
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   border-radius: 10px;
   border: 1px solid #6ab4c7;

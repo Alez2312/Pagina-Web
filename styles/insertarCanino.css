@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-image: url("../fondo.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 130%;
   font-family: sans-serif;
 }
 .title,
@@ -52,8 +52,9 @@ ul li:hover {
   position: relative;
   margin: 20px auto;
   width: 45%;
-  background: #dedede;
+  background: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 20px #333;
 }
 .canino_form {
   padding: 20px 110px;
@@ -124,9 +125,8 @@ ul li:hover {
   height: 40px;
   width: 350px;
   padding: 0 5px;
-  font-size: 18px;
+  font-size: medium;
   outline: none;
-  border: 1px solid silver;
 }
 .canino_form button {
   margin: 45px 0 30px 0;
@@ -136,7 +136,7 @@ ul li:hover {
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   border-radius: 10px;
   border: 1px solid #6ab4c7;

@@ -20,7 +20,7 @@ $refugio = "SELECT * FROM refugio";
 <body>
     <div class="container">
         <h2 class="title">Modificar canino</h2>
-        <form class="canino_form" method="POST" name="canino" id="canino" action="procesoModificarCanino.php" onsubmit="return validated()">
+        <form class="canino_form" method="POST" name="canino" id="canino" action="procesoModificarCanino.php" onsubmit="return validated()" enctype="multipart/form-data">
             <?php $resultado = mysqli_query($conexion, $canino);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
@@ -45,7 +45,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font5">
                     <label class="foto">Foto:</label>
-                    <input type="text" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
+                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
                     <small id="msgFoto" class="small"></small>
                 </div>
                 <div class="font font6">

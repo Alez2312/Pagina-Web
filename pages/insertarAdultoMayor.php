@@ -18,7 +18,7 @@ $refugio = "SELECT * FROM refugio";
 <body>
     <div class="container">
         <h2 class="title">Agregar adulto mayor</h2>
-        <form class="adultoMayor_form" method="POST" name="adultoMayor" action="procesoInsertarAdultoMayor.php" onsubmit="return validated()">
+        <form class="adultoMayor_form" method="POST" name="adultoMayor" action="procesoInsertarAdultoMayor.php" onsubmit="return validated()" enctype="multipart/form-data">
             <div class="font">
                 <label class="id">Cédula:</label>
                 <input type="number" name="id" id="id">
@@ -56,7 +56,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font8">
                 <label class="foto">Foto:</label>
-                <input type="text" name="foto" id="foto">
+                <input type="file" name="foto" id="foto">
                 <small id="msgFoto" class="small"></small>
             </div>
             <div class="font font9">

@@ -18,7 +18,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
 <body>
     <div class="container">
         <h2 class="title">Modificar adulto mayor</h2>
-        <form class="adultoMayor_form" method="POST" name="adultoMayor" id="adultoMayor" action="procesoModificarAdultoMayor.php" onsubmit="return validated()">
+        <form class="adultoMayor_form" method="POST" name="adultoMayor" action="procesoModificarAdultoMayor.php" onsubmit="return validated()" enctype="multipart/form-data">
             <?php $resultado = mysqli_query($conexion, $adultoMayor);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
@@ -58,7 +58,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font8">
                     <label class="foto">Foto:</label>
-                    <input type="text" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
+                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
                     <small id="msgFoto" class="small"></small>
                 </div>
                 <div class="font font9">

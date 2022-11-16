@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-image: url("../fondo.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 800%;
   font-family: sans-serif;
   text-align: center;
 }
@@ -22,7 +22,7 @@ body {
 .image-1 {
   position: absolute;
   top: 200px;
-  right: 40%;
+  right: 42%;
   border: solid black 5px;
   background-image: url("../Fondos/Marketing07.jpg");
   background-size: contain;
@@ -96,7 +96,7 @@ ul li {
   margin-right: -5px;
   position: relative;
   padding: 15px 20px;
-  background: #689ed1;
+  background: blue;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;

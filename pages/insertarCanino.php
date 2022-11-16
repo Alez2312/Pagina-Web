@@ -18,7 +18,7 @@ $refugio = "SELECT * FROM refugio";
 <body>
     <div class="container">
         <h2 class="title">Agregar canino</h2>
-        <form class="canino_form" method="POST" name="canino" id="canino" action="procesoInsertarCanino.php" onsubmit="return validated()">
+        <form class="canino_form" method="POST" name="canino" id="canino" action="procesoInsertarCanino.php" onsubmit="return validated()" enctype="multipart/form-data">
             <div class="font">
                 <label class="id">Código:</label>
                 <input type="number" name="id" id="id">
@@ -41,7 +41,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font5">
                 <label class="foto">Foto:</label>
-                <input type="text" name="foto" id="foto">
+                <input type="file" name="foto" id="foto">
                 <small id="msgFoto" class="small"></small>
             </div>
             <div class="font font6">

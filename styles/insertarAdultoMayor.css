@@ -1,4 +1,6 @@
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 body {
@@ -6,7 +8,7 @@ body {
   padding: 0;
   background-image: url("../fondo.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 930px;
   font-family: sans-serif;
 }
 .title,
@@ -51,8 +53,9 @@ ul li:hover {
   z-index: 1;
   margin: 40px 28%;
   width: 45%;
-  background: #dedede;
+  background: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 20px #333;
 }
 
 .adultoMayor_form {
@@ -108,7 +111,7 @@ ul li:hover {
   margin: 0 64px 0 0;
 }
 .foto {
-  margin: 0 103px 0 0;
+  margin: 0 100px 0 0;
 }
 .estado {
   margin: 10px 30% 0 0;
@@ -117,9 +120,8 @@ ul li:hover {
   height: 40px;
   width: 350px;
   padding: 0 5px;
-  font-size: 18px;
+  font-size: medium;
   outline: none;
-  border: 1px solid silver;
 }
 .adultoMayor_form button {
   margin: 45px 0 30px 0;
@@ -129,7 +131,7 @@ ul li:hover {
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   border-radius: 10px;
   border: 1px solid #6ab4c7;

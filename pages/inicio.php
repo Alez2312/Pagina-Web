@@ -18,10 +18,8 @@
                 <li><a class="link_a" href="canino.php">Canino</a></li>
                 <li><a class="link_a" href="refugio.php">Refugio</a></li>
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
-                <li><a class="link_a" href="simon.php">Simon</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="monitoreo.php">Monitoreo</a></li>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>

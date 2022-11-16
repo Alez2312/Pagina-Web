@@ -7,7 +7,14 @@ $apellido1 = $_POST["apellido1"];
 $apellido2 = $_POST["apellido2"];
 $celular = $_POST["celular"];
 $direccion = $_POST["direccion"];
-$foto = $_POST["foto"];
+$foto = $_FILES['foto']['name'];
+
+if ($foto != "") {
+    $doc = $nombreusu . "- foto -" . $foto;
+    $ruta = $_FILES['foto']['tmp_name'];
+    $destino = "foto/" . $doc;
+    (copy($ruta, $destino));
+}
 $estado = $_POST["estado"];
 
 $conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");

@@ -14,7 +14,7 @@ body {
     padding: 0;
     background-image: url("../fondo.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 172%;
     font-family: sans-serif;
 }
 
@@ -26,6 +26,8 @@ body {
 }
 
 .login_form {
+    background-color: white;
+    margin: 0px 72px;
     width: 360px;
     padding: 4rem 2rem;
     border-radius: 1rem;
@@ -55,7 +57,7 @@ body {
     display: block;
     left: 1rem;
     top: 1rem;
-    background-color: rgb(191 250 255);
+    background-color: white;
     color: black;
     font-size: medium;
     transition: .3s;

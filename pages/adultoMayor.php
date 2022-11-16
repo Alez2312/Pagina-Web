@@ -22,10 +22,8 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <li><a class="link_a" href="tipoCanino.php">Tipo de canino</a></li>
                 <li><a class="link_a" href="canino.php">Canino</a></li>
                 <li><a class="link_a" href="refugio.php">Refugio</a></li>
-                <li><a class="link_a" href="simon.php">Simon</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="monitoreo.php">Monitoreo</a></li>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
@@ -38,8 +36,8 @@ $adultoMayor = "SELECT * FROM adultomayor";
         <a class="buttonAgregar" href="insertarAdultoMayor.php">Agregar</a>
         <form action="" method="GET">
             <div class="buscar">
-                <input type="text" name="busqueda">
-                <input type="submit" name="enviar" value="Buscar">
+                <input class="input_busqueda" type="text" name="busqueda">
+                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
             </div>
         </form>
         <div class="table_title">Datos del adulto mayor</div>
@@ -91,8 +89,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                     <a class="buttonME" href="eliminarAdultoMayor.php?id=<?php echo $row['id']; ?>">Eliminar</a>
                 </div>
         <?php }
-        }
-        mysqli_free_result($resultado); ?>
+        } ?>
     </div>
     <script src="../adultoMayor.js"></script>
 </body>

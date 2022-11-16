@@ -1,10 +1,13 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
 body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  margin: 0;
+  padding: 0;
+  background-image: url("../fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 930px;
+  font-family: sans-serif;
 }
 .title,
 nav {
@@ -48,8 +51,9 @@ ul li:hover {
   z-index: 1;
   margin: 40px 28%;
   width: 45%;
-  background: #dedede;
+  background: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 20px #333;
 }
 
 .usuario_form {
@@ -68,6 +72,9 @@ ul li:hover {
   padding-top: 15px;
 }
 .usuario_form .font5 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
   padding: 15px 0 15px 0;
 }
 
@@ -84,8 +91,7 @@ ul li:hover {
   margin: 0 40px 0 0;
 }
 .estado {
-  margin: 0 30px 0 0;
-  padding: auto;
+  margin: 10px 25px 0 0;
 }
 .usuario_form input {
   height: 40px;
@@ -139,6 +145,35 @@ ul ul a {
 ul li:hover > ul {
   display: block;
 }
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: red;
+  border-radius: 30px;
+  margin-left: 90px;
+}
+
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: green;
+}
+
+.toggle.active .toggle_button {
+  left: 27px;
+}
+
 
 .small {
   color: red;

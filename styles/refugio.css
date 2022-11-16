@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-image: url("../fondo.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 220%;
   font-family: sans-serif;
 }
 .title,
@@ -33,7 +33,7 @@ ul li {
   margin-right: -5px;
   position: relative;
   padding: 15px 20px;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
@@ -64,13 +64,13 @@ ul li:hover {
   text-decoration: none;
 }
 .buttonAgregar:hover{
-  background-color: #689ed1;
+  background-color: blue;
   color: white;
 }
 
 .container_table {
-  margin: 40px auto;
-  background: #dedede;
+  margin: 40px 22%;
+  background: transparent;
   border-radius: 5px;
   display: grid;
   grid-auto-rows: 40px;
@@ -139,4 +139,16 @@ ul li:hover > ul {
 }
 .buttonME:hover {
   color: black;
+}
+
+.buscar{
+  padding: 8px 0;
+}
+.input_busqueda{
+  height: 25px;
+  border-radius: 5px;
+}
+.input_enviar{
+  height: 25px;
+  border-radius: 5px;
 }
