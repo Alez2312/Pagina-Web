@@ -4,7 +4,7 @@ $id = $_POST["id"];
 $descripcion = $_POST["descripcion"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
+$conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
 $actualizar = "UPDATE simon SET descripcion='$descripcion', estado='$estado' WHERE id='$id'";
 

@@ -4,7 +4,7 @@ $cod_perfil = $_POST["cod_perfil"];
 $descripcion = $_POST["descripcion"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
+$conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
 $insertar = "INSERT INTO perfil(cod_perfil,descripcion,estado) VALUES ('$cod_perfil','$descripcion','$estado')";
 $resultado = mysqli_query($conexion, $insertar);

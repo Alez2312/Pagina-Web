@@ -6,7 +6,7 @@ $clave = $_POST["clave"];
 $cod_perfil = $_POST["cod_perfil"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
+$conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
 $insertar = "INSERT INTO usuario(cc,nombre,clave,cod_perfil,estado) VALUES ('$cc','$nombre','$clave','$cod_perfil','$estado')";
 $resultado = mysqli_query($conexion, $insertar);

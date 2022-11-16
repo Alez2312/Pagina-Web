@@ -1,10 +1,13 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
 body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  margin: 0;
+  padding: 0;
+  background-image: url("../fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: sans-serif;
 }
 .title,
 nav {
@@ -136,7 +139,7 @@ ul li:hover {
   height: 35px;
   background: red;
   border-radius: 30px;
-  margin-left: 9.5%;
+  margin-left: 10%;
 }
 
 .toggle .toggle_button {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
+$conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
 $cc = $_POST["cc"];
 $clave = $_POST["clave"];

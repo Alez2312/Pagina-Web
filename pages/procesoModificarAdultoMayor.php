@@ -10,7 +10,7 @@ $direccion = $_POST["direccion"];
 $foto = $_POST["foto"];
 $estado = $_POST["estado"];
 
-$conexion = mysqli_connect("localhost", "root", "", "compañerosporsimilitud");
+$conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
 $actualizar = "UPDATE adultomayor SET nombre1='$nombre1', nombre2='$nombre2', apellido1='$apellido1', apellido2='$apellido2', celular='$celular', direccion='$direccion', foto='$foto', estado='$estado' WHERE id='$id'";
 

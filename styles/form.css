@@ -1,13 +1,15 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
 body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  margin: 0;
+  padding: 0;
+  background-image: url("../fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: sans-serif;
   text-align: center;
 }
-
 .descripcion {
   position: absolute;
   right: 20px;
@@ -27,7 +29,7 @@ body {
   background-repeat: no-repeat;
   transform: rotate(-35deg);
   height: 185px;
-  width: 280px;
+  width: 273px;
 }
 .image-2 {
   position: absolute;
@@ -38,7 +40,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   height: 190px;
-  width: 285px;
+  width: 280px;
 }
 .image-3 {
   position: absolute;
@@ -62,7 +64,7 @@ body {
   background-repeat: no-repeat;
   transform: rotate(-35deg);
   height: 185px;
-  width: 280px;
+  width: 273px;
 }
 .image-5 {
   position: absolute;
@@ -95,7 +97,6 @@ ul li {
   position: relative;
   padding: 15px 20px;
   background: #689ed1;
-  color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -104,8 +105,17 @@ ul li {
   transition: all 0.2s;
 }
 ul li:hover {
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
+}
+
+.link_a {
+  text-decoration: none;
+  color: white;
+}
+.link_a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 ul ul {

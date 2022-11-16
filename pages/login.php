@@ -38,7 +38,7 @@
 
             <button class="form_button" type="submit">Ingresar</button>
             <div><b>¿No tienes cuenta?</b></div>
-            
+            <a class="form_a" href="usuario.php">Regístrate</a>
         </form>
     </div>
 </body>
