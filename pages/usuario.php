@@ -53,7 +53,7 @@ $perfil = "SELECT * FROM perfil";
                 </div>
             </div>
             <button type="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/login.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/inicio.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/usuario.js"></script>

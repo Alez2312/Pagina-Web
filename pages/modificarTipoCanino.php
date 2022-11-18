@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $id = $_GET["id"];
-$tipocanino = "SELECT * FROM tipocanino WHERE id = '$id'";
+$tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id = '$id'";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <input type="number" name="id" id="id" value="<?php echo $row['id']; ?>">
+                    <input type="number" name="id" id="id" value="<?php echo $row['id_tipo_canino']; ?>">
                     <small id="msgId" class="small"></small>
                 </div>
                 <div class="font font2">

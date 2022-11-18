@@ -22,7 +22,7 @@
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
+                        <li><a class="link_a" href="usuarioPerfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>

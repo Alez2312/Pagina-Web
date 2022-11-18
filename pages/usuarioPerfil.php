@@ -22,7 +22,9 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
             <?php $resultado = mysqli_query($conexion, $adultoMayor);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
-                    <label class="id">Cédula:</label><?php echo $row['id']; ?>
+                    <label class="id">Cédula:</label>
+                    <input type="number" name="id" id="id" value="<?php echo $row['id']; ?>">
+                    <small id="msgId" class="small"></small>
                 </div>
                 <div class="font font2">
                     <label class="nombre1">Primer nombre:</label>
@@ -56,10 +58,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font8">
                     <label class="foto">Foto:</label>
-                    <div>
-                        <img class="imagen" src="../fotos/<?php echo $row['foto'] ?>">
-                        <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
-                    </div>
+                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
                     <small id="msgFoto" class="small"></small>
                 </div>
                 <div class="font font9">

@@ -9,42 +9,10 @@ body {
   background-size: 100% 930px;
   font-family: sans-serif;
 }
-.title,
-nav {
+.title{
   text-align: center;
   position: relative;
   z-index: 2;
-}
-
-ul {
-  text-transform: uppercase;
-  text-align: left;
-  display: inline;
-  margin: 0;
-  padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
-ul li {
-  font: bold 12px/18px sans-serif;
-  display: inline-block;
-  margin-right: -5px;
-  position: relative;
-  padding: 15px 20px;
-  background: #689ed1;
-  color: #ffffff;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-}
-ul li:hover {
-  background: #ffffff;
-  color: #f7f7f7;
 }
 .container {
   position: absolute;
@@ -109,7 +77,7 @@ ul li:hover {
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  background: #689ed1;
+  background:blue;
   color: #ffffff;
   border-radius: 10px;
   border: 1px solid #6ab4c7;
@@ -179,6 +147,7 @@ ul li:hover > ul {
   color: red;
 }
 .select{
+  font-size: 16px;
   height: 36px;
-  width: 130px;
+  width: 150px;
 }

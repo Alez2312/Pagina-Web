@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $id = $_GET["id"];
-$canino = "SELECT * FROM canino WHERE id = '$id'";
+$canino = "SELECT * FROM canino WHERE id_canino = '$id'";
 $tipoCanino = "SELECT * FROM tipocanino";
 $refugio = "SELECT * FROM refugio";
 ?>
@@ -25,12 +25,12 @@ $refugio = "SELECT * FROM refugio";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <input type="number" name="id" id="id" value="<?php echo $row['id']; ?>">
+                    <input type="number" name="id" id="id" value="<?php echo $row['id_canino']; ?>">
                     <small id="msgId" class="small"></small>
                 </div>
                 <div class="font font2">
                     <label class="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" value="<?php echo $row['nombre']; ?>">
+                    <input type="text" name="nombre" id="nombre" value="<?php echo $row['nombre_canino']; ?>">
                     <small id="msgNombre" class="small"></small>
                 </div>
                 <div class="font font3">
@@ -56,7 +56,7 @@ $refugio = "SELECT * FROM refugio";
 
                         while ($row = mysqli_fetch_assoc($resultado)) {
                         ?>
-                            <option value="<?php echo $row['id'] ?>"><?php echo $row['descripcion'] ?>
+                            <option value="<?php echo $row['id_tipo_canino'] ?>"><?php echo $row['descripcion'] ?>
                             </option>
                         <?php } ?>
                     </select>
@@ -69,7 +69,7 @@ $refugio = "SELECT * FROM refugio";
 
                         while ($row2 = mysqli_fetch_assoc($resultado)) {
                         ?>
-                            <option value="<?php echo $row2['id'] ?>"><?php echo $row2['nombre'] ?>
+                            <option value="<?php echo $row2['id_refugio'] ?>"><?php echo $row2['nombre'] ?>
                             </option>
                         <?php } ?>
                     </select>

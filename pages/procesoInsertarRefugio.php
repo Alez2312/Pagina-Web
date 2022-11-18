@@ -9,7 +9,7 @@ $estado = $_POST["estado"];
 
 $conexion = mysqli_connect("localhost","root","","companerosporsimilitud");
 
-$insertar = "INSERT INTO refugio(id,nombre,direccion,telefono,celular,estado) VALUES ('$id','$nombre','$direccion','$telefono','$celular','$estado')";
+$insertar = "INSERT INTO refugio(id_refugio,nombre,direccion,telefono,celular,estado_refugio) VALUES ('$id','$nombre','$direccion','$telefono','$celular','$estado')";
 $resultado = mysqli_query($conexion, $insertar);
 if ($resultado) {
     echo "Datos guardados";

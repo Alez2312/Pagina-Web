@@ -9,7 +9,7 @@ $estado = $_POST["estado"];
 
 $conexion = mysqli_connect("localhost","root","","companerosporsimilitud");
 
-$actualizar = "UPDATE refugio SET nombre='$nombre', direccion='$direccion', telefono='$telefono', celular='$celular', estado='$estado' WHERE id='$id'";
+$actualizar = "UPDATE refugio SET nombre='$nombre', direccion='$direccion', telefono='$telefono', celular='$celular', estado_refugio='$estado' WHERE id_refugio ='$id'";
 
 $resultado = mysqli_query($conexion, $actualizar);
 if ($resultado) {

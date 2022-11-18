@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $id = $_GET["id"];
-$refugio = "SELECT * FROM refugio WHERE id = '$id'";
+$refugio = "SELECT * FROM refugio WHERE id_refugio = '$id'";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $refugio = "SELECT * FROM refugio WHERE id = '$id'";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <input type="number" name="id" id="id" value="<?php echo $row['id']; ?>">
+                    <input type="number" name="id" id="id" value="<?php echo $row['id_refugio']; ?>">
                     <small id="msgId" class="small"></small>
                 </div>
                 <div class="font font2">
@@ -48,7 +48,7 @@ $refugio = "SELECT * FROM refugio WHERE id = '$id'";
                 </div>
                 <div class="font font6">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="<?php echo $row['estado']; ?>" onclick="Animatedtoggle()">
+                    <div class="toggle" value="<?php echo $row['estado_refugio']; ?>" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
                         <input type="hidden" name="estado" id="estado">
                     </div>

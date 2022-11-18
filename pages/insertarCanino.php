@@ -52,7 +52,7 @@ $refugio = "SELECT * FROM refugio";
 
                     while ($row = mysqli_fetch_assoc($resultado)) {
                     ?>
-                        <option value="<?php echo $row['id'] ?>"><?php echo $row['descripcion'] ?>
+                        <option value="<?php echo $row['id_tipo_canino'] ?>"><?php echo $row['descripcion'] ?>
                         </option>
                     <?php } ?>
                 </select>
@@ -65,7 +65,7 @@ $refugio = "SELECT * FROM refugio";
 
                     while ($row2 = mysqli_fetch_assoc($resultado)) {
                     ?>
-                        <option value="<?php echo $row2['id'] ?>"><?php echo $row2['nombre'] ?>
+                        <option value="<?php echo $row2['id_refugio'] ?>"><?php echo $row2['nombre'] ?>
                         </option>
                     <?php } ?>
                 </select>

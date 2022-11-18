@@ -55,30 +55,30 @@ $refugio = "SELECT * FROM refugio";
             $consulta = $conexion->query("SELECT * FROM refugio WHERE telefono LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
-                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['telefono']; ?></div>
                 <div class="table_item"><?php echo $row['celular']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado"><?php echo $row['estado_refugio']; ?></div>
                 <div class="table_item">
-                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
                 </div>
             <?php }
         } else {
             $resultado = mysqli_query($conexion, $refugio);
 
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
-                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['telefono']; ?></div>
                 <div class="table_item"><?php echo $row['celular']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado"><?php echo $row['estado_refugio']; ?></div>
                 <div class="table_item">
-                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
                 </div>
         <?php }
         } ?>

@@ -52,24 +52,24 @@ $tipoCanino = "SELECT * FROM tipocanino";
             $consulta = $conexion->query("SELECT * FROM tipocanino WHERE estado LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
-                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
                 <div class="table_item"><?php echo $row['estado']; ?></div>
                 <div class="table_item">
-                    <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                    <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>
                 </div>
             <?php }
         } else {
             $resultado = mysqli_query($conexion, $tipoCanino);
 
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
-                <div class="table_item"><?php echo $row['id']; ?></div>
+                <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
                 <div class="table_item"><?php echo $row['estado']; ?></div>
                 <div class="table_item">
-                    <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                    <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>
                 </div>
         <?php }
         } ?>
