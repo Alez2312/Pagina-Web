@@ -2,11 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  padding: 0;
   background-image: url("../fondo.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 800%;
   font-family: sans-serif;
   text-align: center;
 }

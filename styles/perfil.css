@@ -1,10 +1,7 @@
+
 body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background-image: url("../fondo.jpg");
+  font-family: sans-serif;
 }
 .title,
 nav {
@@ -111,11 +108,7 @@ ul li:hover {
   height: 35px;
   background: red;
   border-radius: 30px;
-<<<<<<< HEAD
   margin-left: 21.5%;
-=======
-  margin-left: 9.5%;
->>>>>>> 961483334cea8c1835c43508383de80c433cb3d5
 }
 
 .toggle .toggle_button {

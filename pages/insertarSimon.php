@@ -19,7 +19,7 @@
                 <small id="msgId" class="small"></small>
             </div>
             <div class="font font2">
-                <label>Descripción:</label>
+                <label class="descripcion">Descripción:</label>
                 <input type="text" name="descripcion" id="descripcion">
                 <small id="msgDescripcion" class="small"></small>
             </div>

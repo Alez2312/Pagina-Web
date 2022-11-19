@@ -1,10 +1,13 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
 body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  margin: 0;
+  padding: 0;
+  background-image: url("../fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 240%;
+  font-family: sans-serif;
 }
 .title,
 nav {
@@ -30,7 +33,7 @@ ul li {
   margin-right: -5px;
   position: relative;
   padding: 15px 20px;
-  background: #689ed1;
+  background: blue;
   color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
@@ -40,8 +43,15 @@ ul li {
   transition: all 0.2s;
 }
 ul li:hover {
-  background: #ffffff;
-  color: #f7f7f7;
+  background: white;
+}
+.link_a {
+  text-decoration: none;
+  color: white;
+}
+.link_a:hover {
+  text-decoration: none;
+  color: black;
 }
 .buttonAgregar {
   border: #000000 solid 1px;
@@ -51,15 +61,16 @@ ul li:hover {
   color: #000000;
   margin: 7px;
   font-size: large;
+  text-decoration: none;
 }
 .buttonAgregar:hover{
-  background-color: #689ed1;
+  background-color: blue;
   color: white;
 }
 
 .container_table {
-  margin: 40px auto;
-  background: #dedede;
+  margin: 50px 10%;
+  background: transparent;
   border-radius: 5px;
   display: grid;
   grid-auto-rows: 40px;
@@ -128,4 +139,16 @@ ul li:hover > ul {
 }
 .buttonME:hover {
   color: black;
+}
+
+.buscar{
+  padding: 8px 0;
+}
+.input_busqueda{
+  height: 25px;
+  border-radius: 5px;
+}
+.input_enviar{
+  height: 25px;
+  border-radius: 5px;
 }

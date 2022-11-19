@@ -66,8 +66,8 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                 <div class="table_item"><?php echo $row['fecha_adopcion_inicial']; ?></div>
                 <div class="table_item"><?php echo $row['fecha_adopcion_final']; ?></div>
                 <div class="table_item"><?php echo $row['foto']; ?></div>
-                <div class="table_item"><?php echo $row['descripcion']; ?></div>
-                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
                 <div class="table_item" name="estado"><?php echo $row['estado_canino']; ?></div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id_canino']; ?>">Modificar</a> |
