@@ -12,7 +12,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adulto mayor</title>
-    <link rel="stylesheet" href="../styles/insertarAdultoMayor.css">
+    <link rel="stylesheet" href="../styles/modificarAdultoMayor.css">
 </head>
 
 <body>
@@ -46,7 +46,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font6">
                     <label class="celular">Celular:</label>
-                    <input type="text" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
+                    <input type="number" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
                     <small id="msgCelular" class="small"></small>
                 </div>
                 <div class="font font7">

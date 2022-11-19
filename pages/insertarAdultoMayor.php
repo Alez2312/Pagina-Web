@@ -46,7 +46,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font6">
                 <label class="celular">Celular:</label>
-                <input type="text" name="celular" id="celular">
+                <input type="number" name="celular" id="celular">
                 <small id="msgCelular" class="small"></small>
             </div>
             <div class="font font7">

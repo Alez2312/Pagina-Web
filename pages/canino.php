@@ -30,7 +30,7 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
@@ -42,6 +42,7 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'">
             </div>
         </form>
         <div class="table_title">Datos del canino</div>
@@ -57,7 +58,7 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
         <?php
         if (isset($_GET['enviar'])) {
             $busqueda = $_GET['busqueda'];
-            $consulta = $conexion->query("SELECT * FROM canino WHERE id_canino LIKE '%$busqueda%'");
+            $consulta = $conexion->query("SELECT * FROM canino WHERE nombre_canino LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id_canino']; ?></div>

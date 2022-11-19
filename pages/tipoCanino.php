@@ -27,7 +27,7 @@ $tipoCanino = "SELECT * FROM tipocanino";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuarioPerfil.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,6 +39,7 @@ $tipoCanino = "SELECT * FROM tipocanino";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'">
             </div>
         </form>
         <div class="table_title">Datos del tipo de canino</div>
@@ -49,7 +50,7 @@ $tipoCanino = "SELECT * FROM tipocanino";
         <?php
         if (isset($_GET['enviar'])) {
             $busqueda = $_GET['busqueda'];
-            $consulta = $conexion->query("SELECT * FROM tipocanino WHERE estado LIKE '%$busqueda%'");
+            $consulta = $conexion->query("SELECT * FROM tipocanino WHERE descripcion LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>

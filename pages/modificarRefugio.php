@@ -38,12 +38,12 @@ $refugio = "SELECT * FROM refugio WHERE id_refugio = '$id'";
                 </div>
                 <div class="font font4">
                     <label class="telefono">Teléfono:</label>
-                    <input type="text" name="telefono" id="telefono" value="<?php echo $row['telefono']; ?>">
+                    <input type="number" name="telefono" id="telefono" value="<?php echo $row['telefono']; ?>">
                     <small id="msgTelefono" class="small"></small>
                 </div>
                 <div class="font font5">
                     <label class="celular">Celular:</label>
-                    <input type="text" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
+                    <input type="number" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
                     <small id="msgCelular" class="small"></small>
                 </div>
                 <div class="font font6">

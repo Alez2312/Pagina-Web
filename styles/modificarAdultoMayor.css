@@ -83,6 +83,7 @@ ul li:hover {
   padding-top: 15px;
 }
 .adultoMayor_form .font8 {
+  display: flex;
   padding-top: 15px;
 }
 .adultoMayor_form .font9 {
@@ -111,10 +112,17 @@ ul li:hover {
   margin: 0 64px 0 0;
 }
 .foto {
-  margin: 0 100px 0 0;
+  margin: 65px 100px 0 0;
 }
 .estado {
   margin: 10px 30% 0 0;
+}
+
+.imagen{
+  display: block;
+  width:100px;
+  height:100px;
+  margin: 10px 100px;
 }
 .adultoMayor_form input {
   height: 40px;

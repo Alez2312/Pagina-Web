@@ -26,7 +26,13 @@ $adultoMayor = "SELECT * FROM adultomayor";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
+                        <?php
+                        $resultado = mysqli_query($conexion, $adultoMayor);
+                        if ($row = mysqli_fetch_assoc($resultado)) { ?>
+                            <li>
+                                <a class="link_a" href="perfilUsuario.php?id=<?php echo $row['id']; ?>">Perfil</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </li>
             </ul>
@@ -38,6 +44,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
             </div>
         </form>
         <div class="table_title">Datos del adulto mayor</div>

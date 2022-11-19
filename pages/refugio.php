@@ -27,7 +27,7 @@ $refugio = "SELECT * FROM refugio";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,6 +39,7 @@ $refugio = "SELECT * FROM refugio";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
             </div>
         </form>
         <div class="table_title">Datos de refugio</div>

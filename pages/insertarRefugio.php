@@ -30,12 +30,12 @@
             </div>
             <div class="font font4">
                 <label class="telefono">Teléfono:</label>
-                <input type="text" name="telefono" id="telefono">
+                <input type="number" name="telefono" id="telefono">
                 <small id="msgTelefono" class="small"></small>
             </div>
             <div class="font font5">
                 <label class="celular">Celular:</label>
-                <input type="text" name="celular" id="celular">
+                <input type="number" name="celular" id="celular">
                 <small id="msgCelular" class="small"></small>
             </div>
             <div class="font font6">
