@@ -40,7 +40,7 @@ $tipoCanino = "SELECT * FROM tipocanino";
             <div>
                 <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por descripción">
                 <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
-                <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/tipoCanino.php'">
+                <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'">
             </div>
         </form>
         </div>
@@ -57,7 +57,15 @@ $tipoCanino = "SELECT * FROM tipocanino";
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
-                <div class="table_item"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>
@@ -69,7 +77,15 @@ $tipoCanino = "SELECT * FROM tipocanino";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
-                <div class="table_item"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>

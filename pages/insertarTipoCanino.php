@@ -13,26 +13,21 @@
     <div class="container">
         <h2 class="title">Agregar tipo de canino</h2>
         <form class="tipoCanino_form" method="POST" name="tipoCanino" id="tipoCanino" action="procesoInsertarTipoCanino.php">
-            <hr class="hr">
+        <hr class="hr">
             <?php
-            if (isset($_GET['error'])) {
-            ?>
+            if (isset($_GET['error'])) { ?>
                 <p class="error">
-                    <?php
-                    echo $_GET['error']
-                    ?>
+                    <?= htmlspecialchars($_GET['error']) ?>
                 </p>
-            <?php
-            }
-            ?>
+            <?php } ?>
             <hr class="hr">
             <div class="font">
                 <label class="id">Código:</label>
-                <input type="number" name="id" id="id" value="<?echo $_SESSION['id'];?>">
+                <input type="number" name="id" id="id" required>
             </div>
             <div class="font font2">
                 <label class="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" id="descripcion">
+                <input type="text" name="descripcion" id="descripcion" required>
             </div>
             <div class="font font3">
                 <label class="estado">Estado:</label>
@@ -42,7 +37,7 @@
                 </div>
             </div>
             <button type="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/tipoCanino.js"></script>

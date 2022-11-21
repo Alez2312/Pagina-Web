@@ -32,7 +32,6 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 <div class="font font3">
                     <label class="nombre2">Segundo nombre:</label>
                     <input type="text" name="nombre2" id="nombre2" value="<?php echo $row['nombre2']; ?>">
-                    <small id="msgNombre2" class="small"></small>
                 </div>
                 <div class="font font4">
                     <label class="apellido1">Primer apellido:</label>
@@ -42,17 +41,14 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 <div class="font font5">
                     <label class="apellido2">Segundo apellido:</label>
                     <input type="text" name="apellido2" id="apellido2" value="<?php echo $row['apellido2']; ?>">
-                    <small id="msgApellido2" class="small"></small>
                 </div>
                 <div class="font font6">
                     <label class="celular">Celular:</label>
                     <input type="number" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
-                    <small id="msgCelular" class="small"></small>
                 </div>
                 <div class="font font7">
                     <label class="direccion">Dirección:</label>
                     <input type="text" name="direccion" id="direccion" value="<?php echo $row['direccion']; ?>">
-                    <small id="msgCelular" class="small"></small>
                 </div>
                 <div class="font font8">
                     <label class="foto">Foto:</label>
@@ -64,7 +60,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font9">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="<?php echo $row['estado']; ?>" onclick="Animatedtoggle()">
+                    <div class="toggle" value="0" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
                         <input type="hidden" name="estado" id="estado">
                     </div>
@@ -72,7 +68,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/adultoMayor.js"></script>

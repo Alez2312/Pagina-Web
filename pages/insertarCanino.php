@@ -19,30 +19,33 @@ $refugio = "SELECT * FROM refugio";
     <div class="container">
         <h2 class="title">Agregar canino</h2>
         <form class="canino_form" method="POST" name="canino" id="canino" action="procesoInsertarCanino.php" onsubmit="return validated()" enctype="multipart/form-data">
+            <hr class="hr">
+            <?php
+            if (isset($_GET['error'])) { ?>
+                <p class="error">
+                    <?= htmlspecialchars($_GET['error']) ?>
+                </p>
+            <?php } ?>
+            <hr class="hr">
             <div class="font">
                 <label class="id">Código:</label>
-                <input type="number" name="id" id="id">
-                <small id="msgId" class="small"></small>
+                <input type="number" name="id" id="id" required>
             </div>
             <div class="font font2">
                 <label class="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-                <small id="msgNombre" class="small"></small>
+                <input type="text" name="nombre" id="nombre" required>
             </div>
             <div class="font font3">
                 <label class="fecha_adopcion_inicial">Fecha adopción inicial:</label>
-                <input type="date" name="fecha_adopcion_inicial" id="fecha_adopcion_inicial">
-                <small id="msgFecha_adopcion_inicial" class="small"></small>
+                <input type="date" name="fecha_adopcion_inicial" id="fecha_adopcion_inicial" min="<?= date('Y-m-d'); ?>" max="2022-11-30" required>
             </div>
             <div class="font font4">
                 <label class="fecha_adopcion_final">Fecha adopción final:</label>
-                <input type="date" pattern="dd-mm-yyyy" name="fecha_adopcion_final" id="fecha_adopcion_final">
-                <small id="msgFecha_adopcion_final" class="small"></small>
+                <input type="date" pattern="dd-mm-yyyy" name="fecha_adopcion_final" id="fecha_adopcion_final" required>
             </div>
             <div class="font font5">
                 <label class="foto">Foto:</label>
-                <input type="file" name="foto" id="foto">
-                <small id="msgFoto" class="small"></small>
+                <input type="file" name="foto" id="foto" required>
             </div>
             <div class="font font6">
                 <label class="id_tipo_canino">Tipo canino:</label>
@@ -60,7 +63,7 @@ $refugio = "SELECT * FROM refugio";
             <div class="font font7">
                 <label class="id_refugio">Refugio:</label>
                 <select class="select" name="id_refugio" id="">
-                    
+
                     <?php $resultado = mysqli_query($conexion, $refugio);
 
                     while ($row2 = mysqli_fetch_assoc($resultado)) {
@@ -78,7 +81,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
             </div>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/canino.js"></script>

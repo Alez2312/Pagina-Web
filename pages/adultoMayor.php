@@ -39,7 +39,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <div>
                     <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
                     <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
-                    <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/adultoMayor.php'">
+                    <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
                 </div>
             </form>
         </div>
@@ -68,7 +68,15 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <div class="table_item"><?php echo $row['celular']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['foto']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarAdultoMayor.php?id=<?php echo $row['id']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarAdultoMayor.php?id=<?php echo $row['id']; ?>">Eliminar</a>
@@ -86,7 +94,15 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <div class="table_item"><?php echo $row['celular']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['foto']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarAdultoMayor.php?id=<?php echo $row['id']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarAdultoMayor.php?id=<?php echo $row['id']; ?>">Eliminar</a>

@@ -40,7 +40,7 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/tipoCanino.js"></script>

@@ -56,7 +56,7 @@ $refugio = "SELECT * FROM refugio WHERE id_refugio = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/refugio.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/refugio.js"></script>

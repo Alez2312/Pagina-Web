@@ -40,7 +40,7 @@ $perfil = "SELECT * FROM perfil WHERE cod_perfil = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/perfil.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/perfil.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/perfil.js"></script>

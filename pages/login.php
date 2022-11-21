@@ -22,13 +22,13 @@
             <hr class="hr">
 
             <div class="form_div">
-                <input class="form_input" type="number" name="cc" autocomplete="off" placeholder=" " 
-                value="<?php if(isset($_GET['cc']))echo(htmlspecialchars($_GET['cc'])) ?>"
+                <input class="form_input" type="number" name="cc" autocomplete="off" placeholder=" " required
+                value="<?php if(isset($_GET['cc']))echo(htmlspecialchars($_GET['cc'])) ?>">
                 <label class="form_label" for="">Número de documento</label>
             </div>
 
             <div class="form_div">
-                <input class="form_input" type="password" name="clave" placeholder=" ">
+                <input class="form_input" type="password" name="clave" placeholder=" " required>
                 <label class="form_label" for="">Clave</label>
             </div>
 

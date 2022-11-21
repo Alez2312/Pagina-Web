@@ -19,6 +19,14 @@ $estado = $_POST["estado"];
 
 $conexion = mysqli_connect("localhost", "root", "", "companerosporsimilitud");
 
+$consulta = "SELECT id_canino FROM canino WHERE id_canino='$id'";
+$resultadoConsulta = mysqli_query($conexion, $consulta);
+
+if(mysqli_num_rows($resultadoConsulta) >0){
+    header('location:insertarCanino.php?error=Código duplicado');
+    exit;
+}
+
 $insertar = "INSERT INTO canino(id_canino, nombre_canino, fecha_adopcion_inicial, fecha_adopcion_final, foto, id_tipo_canino, id_refugio, estado_canino) 
             VALUES ('$id','$nombre', '$fecha_adopcion_inicial', '$fecha_adopcion_final', '$foto', '$id_tipo_canino', '$id_refugio' ,'$estado')";
 $resultado = mysqli_query($conexion, $insertar);

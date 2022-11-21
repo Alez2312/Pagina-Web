@@ -42,7 +42,7 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/canino.php'">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'">
             </div>
         </form>
         <div class="table_title">Datos del canino</div>
@@ -68,7 +68,15 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                 <div class="table_item"><?php echo $row['foto']; ?></div>
                 <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['id_refugio']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado_canino']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_canino'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id_canino']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id_canino']; ?>">Eliminar</a>
@@ -85,7 +93,15 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                 <div class="table_item"><?php echo $row['foto']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado_canino']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_canino'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarCanino.php?id=<?php echo $row['id_canino']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarCanino.php?id=<?php echo $row['id_canino']; ?>">Eliminar</a>

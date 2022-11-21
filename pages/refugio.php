@@ -39,7 +39,7 @@ $refugio = "SELECT * FROM refugio";
             <div class="buscar">
                 <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/refugio.php'">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
             </div>
         </form>
         <div class="table_title">Datos de refugio</div>
@@ -61,7 +61,15 @@ $refugio = "SELECT * FROM refugio";
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['telefono']; ?></div>
                 <div class="table_item"><?php echo $row['celular']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado_refugio']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_refugio'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
@@ -76,7 +84,15 @@ $refugio = "SELECT * FROM refugio";
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
                 <div class="table_item"><?php echo $row['telefono']; ?></div>
                 <div class="table_item"><?php echo $row['celular']; ?></div>
-                <div class="table_item" name="estado"><?php echo $row['estado_refugio']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_refugio'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
