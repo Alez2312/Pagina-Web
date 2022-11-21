@@ -26,27 +26,23 @@ $adultoMayor = "SELECT * FROM adultomayor";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <?php
-                        $resultado = mysqli_query($conexion, $adultoMayor);
-                        if ($row = mysqli_fetch_assoc($resultado)) { ?>
-                            <li>
-                                <a class="link_a" href="perfilUsuario.php?id=<?php echo $row['id']; ?>">Perfil</a>
-                            </li>
-                        <?php } ?>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </div>
     <div class="container_table">
-        <a class="buttonAgregar" href="insertarAdultoMayor.php">Agregar</a>
-        <form action="" method="GET">
-            <div class="buscar">
-                <input class="input_busqueda" type="text" name="busqueda">
-                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
-            </div>
-        </form>
+        <div class="buscar">
+            <a class="buttonsBusqueda" href="insertarAdultoMayor.php">Agregar</a>
+            <form class="form" method="GET">
+                <div>
+                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
+                    <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
+                    <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/adultoMayor.php'">
+                </div>
+            </form>
+        </div>
         <div class="table_title">Datos del adulto mayor</div>
         <div class="table_header">Cédula</div>
         <div class="table_header">Primer nombre</div>
@@ -61,7 +57,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
         <?php
         if (isset($_GET['enviar'])) {
             $busqueda = $_GET['busqueda'];
-            $consulta = $conexion->query("SELECT * FROM adultomayor WHERE id LIKE '%$busqueda%'");
+            $consulta = $conexion->query("SELECT * FROM adultomayor WHERE nombre1 LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id']; ?></div>
@@ -98,7 +94,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
         <?php }
         } ?>
     </div>
-    <script src="../adultoMayor.js"></script>
+    <script src="../js/adultoMayor.js"></script>
 </body>
 
 </html>

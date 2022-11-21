@@ -31,12 +31,12 @@ function validated() {
     msgDireccion.innerHTML = "* La dirección está vacio";
     validation = false;
   }
-  if (telefono == null || telefono.length == 0 || expTelefono.test(telefono)) {
-    msgTelefono.innerHTML = "* El teléfono es incorrecto";
+  if (telefono == null || telefono.length < 10) {
+    msgTelefono.innerHTML = "* Teléfono invalido";
     validation = false;
   }
-  if (celular == null || celular.length == 0) {
-    msgCelular.innerHTML = "* El celular es incorrecto";
+  if (celular == null || celular.length < 10) {
+    msgCelular.innerHTML = "* Celular invalido";
     validation = false;
   }
   if (validation == true){

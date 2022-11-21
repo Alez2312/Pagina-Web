@@ -57,7 +57,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 <div class="font font8">
                     <label class="foto">Foto:</label>
                     <div>
-                        <img class="imagen" src="../fotos/<?php echo $row['foto'] ?>">
+                        <img class="imagen" src="../Rostros encontrados/<?php echo $row['foto'] ?>">
                         <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
                     </div>
                     <small id="msgFoto" class="small"></small>
@@ -72,7 +72,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/adultoMayor.js"></script>

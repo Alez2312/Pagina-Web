@@ -1,10 +1,14 @@
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
+
 body {
   background-image: url("../fondo.jpg");
   font-family: sans-serif;
 }
+
 .title,
 nav {
   text-align: center;
@@ -23,6 +27,7 @@ ul {
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
+
 ul li {
   font: bold 12px/18px sans-serif;
   display: inline-block;
@@ -38,34 +43,55 @@ ul li {
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
+
 ul li:hover {
   background: white;
 }
+
 .link_a {
   text-decoration: none;
   color: white;
 }
+
 .link_a:hover {
   text-decoration: none;
   color: black;
 }
-.buttonAgregar {
+
+.buttonsBusqueda {
   border: #000000 solid 1px;
   border-radius: 5px;
   background-color: white;
   text-align: center;
   color: #000000;
-  margin: 7px;
-  font-size: large;
+  font-size: 15px;
+  cursor: pointer;
   text-decoration: none;
+  padding: 2px;
 }
-.buttonAgregar:hover{
+
+.buttonsBusqueda:hover {
   background-color: blue;
   color: white;
 }
 
+.buscar {
+  padding: 8px 0;
+  grid-column-start: 1;
+  grid-column-end: 11;
+}
+
+.form {
+  display: inline-block;
+}
+
+.input_busqueda {
+  height: 28px;
+  border-radius: 5px;
+}
+
 .container_table {
-  margin: 50px 10%;
+  margin: inherit;
   background: transparent;
   border-radius: 5px;
   display: grid;
@@ -100,6 +126,7 @@ ul li:hover {
   padding: 5px;
   font-size: 20px;
 }
+
 ul li:hover {
   background: #ffffff;
   color: #000000;
@@ -118,13 +145,16 @@ ul ul li {
   float: none;
   width: 150px;
 }
+
 ul ul a {
   line-height: 120%;
   padding: 10px 15px;
 }
-ul li:hover > ul {
+
+ul li:hover>ul {
   display: block;
 }
+
 .buttonME {
   font-size: 16px;
   margin: 3px;
@@ -133,18 +163,7 @@ ul li:hover > ul {
   color: gray;
   transition: 0.3s;
 }
+
 .buttonME:hover {
   color: black;
-}
-
-.buscar{
-  padding: 8px 0;
-}
-.input_busqueda{
-  height: 25px;
-  border-radius: 5px;
-}
-.input_enviar{
-  height: 25px;
-  border-radius: 5px;
 }

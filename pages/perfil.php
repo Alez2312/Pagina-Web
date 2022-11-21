@@ -1,3 +1,7 @@
+<?php
+include("conexion.php");
+$perfil = "SELECT * FROM perfil";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,23 +14,19 @@
 </head>
 
 <body>
-    <div>
         <div>
             <h1 class="title">COMPAÑEROS POR SIMILITUD</h1>
             <nav class="nav" id="nav">
                 <ul>
-                    <li><a href="inicio.php">Inicio</a></li>
-                    <li><a href="tipoCanino.php">Tipo de canino</a></li>
-                    <li><a href="canino.php">Canino</a></li>
-                    <li><a href="refugio.php">Refugio</a></li>
-                    <li><a href="adultoMayor.php">Adulto mayor</a></li>
-                    <li><a href="simon.php">Simon</a></li>
-                    <li><a href="#">Más</a>
-                        <ul>
-                            <li><a href="monitoreo.php">Monitoreo</a></li>
-                            <li><a href="programacion.php">Programación</a></li>
-                            <li><a href="usuario.php">Usuario</a></li>
-                            <li><a href="perfil.php">Perfil</a></li>
+                    <li><a class="link_a" href="inicio.php">Inicio</a></li>
+                    <li><a class="link_a" href="tipoCanino.php">Tipo de canino</a></li>
+                    <li><a class="link_a" href="canino.php">Canino</a></li>
+                    <li><a class="link_a" href="refugio.php">Refugio</a></li>
+                    <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
+                    <li><a class="link_a" href="#">Más</a>
+                        <ul>    
+                            <li><a class="link_a" href="programacion.php">Programación</a></li>
+                            <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -52,9 +52,27 @@
                     </div>
                 </div>
                 <button type="submit">Guardar</button>
-                <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/inicio.php'" type="reset">Cancelar</button>
+                <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/inicio.php'" type="reset">Cancelar</button>
             </form>
         </div>
+    <div class="container_table">
+        <div class="table_title">Datos del perfil</div>
+        <div class="table_header">Código</div>
+        <div class="table_header">Descripción</div>
+        <div class="table_header">Estado</div>
+        <div class="table_header">Opciones</div>
+            <?php $resultado = mysqli_query($conexion, $perfil);
+
+            while ($row = mysqli_fetch_assoc($resultado)) { ?>
+                <div class="table_item"><?php echo $row['cod_perfil']; ?></div>
+                <div class="table_item"><?php echo $row['descripcion']; ?></div>
+                <div class="table_item"><?php echo $row['estado']; ?></div>
+                <div class="table_item">
+                    <a class="buttonME" href="modificarPerfil.php?id=<?php echo $row['cod_perfil']; ?>">Modificar</a> |
+                    <a class="buttonME" href="eliminarPerfil.php?id=<?php echo $row['cod_perfil']; ?>">Eliminar</a>
+                </div>
+        <?php } ?>
+    </div>
         <script src="../js/perfil.js"></script>
 </body>
 

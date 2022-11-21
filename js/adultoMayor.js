@@ -1,5 +1,5 @@
 function validated() {
-  var id = document.getElementById("id").value;
+  var cc = document.getElementById("cc").value;
   var nombre1 = document.getElementById("nombre1").value;
   var apellido1 = document.getElementById("apellido1").value;
   var celular = document.getElementById("celular").value;
@@ -21,8 +21,8 @@ function validated() {
   let msg = document.querySelectorAll('small[id^="msg"]');
   let counter = 0;
 
-  if (id == null || id.length == 0) {
-    msgId.innerHTML = "* El código está vacio";
+  if (cc == null || cc.length < 7) {
+    msgId.innerHTML = "* Cédula invalida";
     validation = false;
   }
   if (nombre1 == null || nombre1.length == 0) {
@@ -37,12 +37,12 @@ function validated() {
     msgDireccion.innerHTML = "* La dirección está vacio";
     validation = false;
   }
-  if (telefono == null || telefono.length == 0) {
-    msgTelefono.innerHTML = "* El teléfono está vacio";
+  if (telefono == null || telefono.length < 10) {
+    msgTelefono.innerHTML = "* Teléfono invalido";
     validation = false;
   }
-  if (celular == null || celular.length == 0) {
-    msgCelular.innerHTML = "* El celular está vacio";
+  if (celular == null || celular.length < 10) {
+    msgCelular.innerHTML = "* Celular invalido";
     validation = false;
   }
   if (foto == null || foto.length == 0) {
@@ -58,6 +58,6 @@ function validated() {
 let toggle = document.querySelector(".toggle");
 
 function Animatedtoggle() {
-  toggle.classList.toggle("active");
-  var state = (document.getElementById("estado").value = "1");
+  toggle.classList.toggle("desactive");
+  var state = (document.getElementById("estado").value = "0");
 }

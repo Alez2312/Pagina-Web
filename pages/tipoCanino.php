@@ -27,21 +27,23 @@ $tipoCanino = "SELECT * FROM tipocanino";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuarioPerfil.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </div>
     <div class="container_table">
-        <a class="buttonAgregar" href="insertarTipoCanino.php">Agregar</a>
-        <form action="" method="GET">
-            <div class="buscar">
-                <input class="input_busqueda" type="text" name="busqueda">
-                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'">
+        <div class="buscar">
+        <a class="buttonsBusqueda" href="insertarTipoCanino.php">Agregar</a>
+        <form class="form" method="GET">
+            <div>
+                <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por descripción">
+                <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
+                <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/tipoCanino.php'">
             </div>
         </form>
+        </div>
         <div class="table_title">Datos del tipo de canino</div>
         <div class="table_header">Código</div>
         <div class="table_header">Descripción</div>

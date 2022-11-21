@@ -50,7 +50,7 @@ ul li:hover {
   color: black;
 }
 
-.buttonAgregar {
+.buttonsBusqueda {
   border: black solid 1px;
   border-radius: 5px;
   background-color: white;
@@ -60,14 +60,26 @@ ul li:hover {
   font-size: large;
   text-decoration: none;
 }
-.buttonAgregar:hover{
+.buttonsBusqueda:hover{
   background-color: blue;
   color: white;
 }
+.buscar {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.form {
+  display: inline-block;
+}
+
+.input_busqueda {
+  height: 28px;
+  border-radius: 5px;
+}
 
 .container_table {
-  margin: 40px auto;
-  width: 45%;
+  margin: inherit;
   background: transparent;
   border-radius: 5px;
   display: grid;
@@ -137,15 +149,4 @@ ul li:hover > ul {
 }
 .buttonME:hover {
   color: black;
-}
-.buscar{
-  padding: 8px 0;
-}
-.input_busqueda{
-  height: 25px;
-  border-radius: 5px;
-}
-.input_enviar{
-  height: 25px;
-  border-radius: 5px;
 }

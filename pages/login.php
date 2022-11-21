@@ -14,20 +14,16 @@
             <h2 class="title">Iniciar sesión</h2>
             <hr class="hr">
             <?php
-            if (isset($_GET['error'])) {
-            ?>
+            if (isset($_GET['error'])) { ?>
                 <p class="error">
-                    <?php
-                    echo $_GET['error']
-                    ?>
+                    <?= htmlspecialchars($_GET['error']) ?>
                 </p>
-            <?php
-            }
-            ?>
+            <?php } ?>
             <hr class="hr">
 
             <div class="form_div">
-                <input class="form_input" type="number" name="cc" autocomplete="off" placeholder=" ">
+                <input class="form_input" type="number" name="cc" autocomplete="off" placeholder=" " 
+                value="<?php if(isset($_GET['cc']))echo(htmlspecialchars($_GET['cc'])) ?>"
                 <label class="form_label" for="">Número de documento</label>
             </div>
 

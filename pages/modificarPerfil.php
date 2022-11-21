@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 $id = $_GET["id"];
-$tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
+$perfil = "SELECT * FROM perfil WHERE cod_perfil = '$id'";
 ?>
 
 <!DOCTYPE html>
@@ -11,19 +11,19 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipo de canino</title>
-    <link rel="stylesheet" href="../styles/insertarTipoCanino.css">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../styles/perfil.css">
 </head>
 
 <body>
     <div class="container">
-        <h2 class="title">Modificar tipo de canino</h2>
-        <form class="tipoCanino_form" method="POST" name="tipoCanino" id="tipoCanino" action="procesoModificarTipoCanino.php" onsubmit="return validated()">
-            <?php $resultado = mysqli_query($conexion, $tipocanino);
+        <h2 class="title">Modificar perfil</h2>
+        <form class="perfil_form" method="POST" name="perfil" id="perfil" action="procesoModificarperfil.php" onsubmit="return validated()">
+            <?php $resultado = mysqli_query($conexion, $perfil);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <label type="number" name="id" id="id" value=""><?php echo $row['id_tipo_canino']; ?>
+                    <label type="number" name="id" id="id" value=""><?php echo $row['cod_perfil']; ?>
                 </div>
                 <div class="font font2">
                     <label class="descripcion">Descripción:</label>
@@ -40,10 +40,10 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/tipoCanino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/perfil.php'" type="reset">Cancelar</button>
         </form>
     </div>
-    <script src="../js/tipoCanino.js"></script>
+    <script src="../js/perfil.js"></script>
 </body>
 
 </html>

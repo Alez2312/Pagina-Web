@@ -40,9 +40,9 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
         <a class="buttonAgregar" href="insertarCanino.php">Agregar</a>
         <form action="" method="GET">
             <div class="buscar">
-                <input class="input_busqueda" type="text" name="busqueda">
+                <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/canino.php'">
             </div>
         </form>
         <div class="table_title">Datos del canino</div>

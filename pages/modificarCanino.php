@@ -45,8 +45,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font5">
                     <label class="foto">Foto:</label>
-                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
-                    <small id="msgFoto" class="small"></small>
+                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">   
                 </div>
                 <div class="font font6">
                     <label class="id_tipo_canino">Tipo canino:</label>
@@ -76,7 +75,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font8">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="0" onclick="Animatedtoggle()">
+                    <div class="toggle" value="1    " onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
                         <input type="hidden" name="estado" id="estado">
                     </div>
@@ -84,7 +83,7 @@ $refugio = "SELECT * FROM refugio";
             <?php }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/canino.js"></script>

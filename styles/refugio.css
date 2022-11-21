@@ -65,7 +65,7 @@ ul li:hover {
 }
 
 .container_table {
-  margin: 40px 22%;
+  margin:  inherit  ;
   background: transparent;
   border-radius: 5px;
   display: grid;

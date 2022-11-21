@@ -27,7 +27,7 @@ $refugio = "SELECT * FROM refugio";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
@@ -37,9 +37,9 @@ $refugio = "SELECT * FROM refugio";
         <a class="buttonAgregar" href="insertarRefugio.php">Agregar</a>
         <form action="" method="GET">
             <div class="buscar">
-                <input class="input_busqueda" type="text" name="busqueda">
+                <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
                 <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
+                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/refugio.php'">
             </div>
         </form>
         <div class="table_title">Datos de refugio</div>
@@ -53,7 +53,7 @@ $refugio = "SELECT * FROM refugio";
         <?php
         if (isset($_GET['enviar'])) {
             $busqueda = $_GET['busqueda'];
-            $consulta = $conexion->query("SELECT * FROM refugio WHERE telefono LIKE '%$busqueda%'");
+            $consulta = $conexion->query("SELECT * FROM refugio WHERE nombre LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id_refugio']; ?></div>

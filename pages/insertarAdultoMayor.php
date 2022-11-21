@@ -21,7 +21,7 @@ $refugio = "SELECT * FROM refugio";
         <form class="adultoMayor_form" method="POST" name="adultoMayor" action="procesoInsertarAdultoMayor.php" onsubmit="return validated()" enctype="multipart/form-data">
             <div class="font">
                 <label class="id">Cédula:</label>
-                <input type="number" name="id" id="id">
+                <input type="number" name="id" id="cc">
                 <small id="msgId" class="small"></small>
             </div>
             <div class="font font2">
@@ -61,13 +61,13 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font9">
                 <label class="estado">Estado:</label>
-                <div class="toggle" value="0" onclick="Animatedtoggle()">
+                <div class="toggle" value="1" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>
                     <input type="hidden" name="estado" id="estado">
                 </div>
             </div>
             <button type="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/adultoMayor.js"></script>

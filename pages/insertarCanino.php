@@ -78,7 +78,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
             </div>
             <button type="submit" name="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Proyectazo/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/canino.js"></script>

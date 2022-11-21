@@ -26,13 +26,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                     <ul>
                         <li><a class="link_a" href="programacion.php">Programación</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <?php
-                        $resultado = mysqli_query($conexion, $adultoMayor);
-                        if ($row = mysqli_fetch_assoc($resultado)) { ?>
-                            <li>
-                                <a class="link_a" href="perfilUsuario.php?id=<?php echo $row['id']; ?>">Perfil</a>
-                            </li>
-                        <?php } ?>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
