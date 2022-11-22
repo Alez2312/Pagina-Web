@@ -23,7 +23,7 @@ $tipocanino = "SELECT * FROM tipocanino WHERE id_tipo_canino = '$id'";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <label type="number" name="id" id="id" value=""><?php echo $row['id_tipo_canino']; ?>
+                    <input type="hidden" name="id" id="id" value="<?php echo $row['id_tipo_canino']; ?>"><?php echo $row['id_tipo_canino']; ?>
                 </div>
                 <div class="font font2">
                     <label class="descripcion">Descripción:</label>

@@ -23,7 +23,7 @@ $perfil = "SELECT * FROM perfil WHERE cod_perfil = '$id'";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
                     <label class="id">Código:</label>
-                    <label type="number" name="id" id="id" value=""><?php echo $row['cod_perfil']; ?>
+                    <input type="hidden" name="cod_perfil" value="<?php echo $row['cod_perfil']; ?>"><?php echo $row['cod_perfil']; ?>
                 </div>
                 <div class="font font2">
                     <label class="descripcion">Descripción:</label>

@@ -22,12 +22,12 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
             <?php $resultado = mysqli_query($conexion, $adultoMayor);
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="font">
-                    <label class="id">Cédula:</label><?php echo $row['id']; ?>
+                    <label class="id">Cédula:</label>
+                    <input type="hidden" name="id" id="id" value="<?php echo $row['id']; ?>"><?php echo $row['id']; ?>
                 </div>
                 <div class="font font2">
                     <label class="nombre1">Primer nombre:</label>
-                    <input type="text" name="nombre1" id="nombre1" value="<?php echo $row['nombre1']; ?>">
-                    <small id="msgNombre1" class="small"></small>
+                    <input type="text" name="nombre1" id="nombre1" value="<?php echo $row['nombre1']; ?>" required>
                 </div>
                 <div class="font font3">
                     <label class="nombre2">Segundo nombre:</label>
@@ -35,8 +35,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font4">
                     <label class="apellido1">Primer apellido:</label>
-                    <input type="text" name="apellido1" id="apellido1" value="<?php echo $row['apellido1']; ?>">
-                    <small id="msgNombre1" class="small"></small>
+                    <input type="text" name="apellido1" id="apellido1" value="<?php echo $row['apellido1']; ?>" required>
                 </div>
                 <div class="font font5">
                     <label class="apellido2">Segundo apellido:</label>
@@ -44,11 +43,13 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font6">
                     <label class="celular">Celular:</label>
-                    <input type="number" name="celular" id="celular" value="<?php echo $row['celular']; ?>">
+                    <input type="number" name="celular" id="celular" value="<?php echo $row['celular']; ?>" required>
+                    <small id="msgCelular" class="small"></small>
+
                 </div>
                 <div class="font font7">
                     <label class="direccion">Dirección:</label>
-                    <input type="text" name="direccion" id="direccion" value="<?php echo $row['direccion']; ?>">
+                    <input type="text" name="direccion" id="direccion" value="<?php echo $row['direccion']; ?>" required>
                 </div>
                 <div class="font font8">
                     <label class="foto">Foto:</label>

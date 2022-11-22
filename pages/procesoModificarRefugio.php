@@ -14,6 +14,7 @@ $actualizar = "UPDATE refugio SET nombre='$nombre', direccion='$direccion', tele
 $resultado = mysqli_query($conexion, $actualizar);
 if ($resultado) {
     echo "Datos guardados";
+    header('location:refugio.php');
 } else {
     echo "Datos no guardados";
 }

@@ -66,7 +66,15 @@ $perfil = "SELECT * FROM perfil";
             while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <div class="table_item"><?php echo $row['cod_perfil']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
-                <div class="table_item"><?php echo $row['estado']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado'] == 1) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarPerfil.php?id=<?php echo $row['cod_perfil']; ?>">Modificar</a> |
                     <a class="buttonME" href="eliminarPerfil.php?id=<?php echo $row['cod_perfil']; ?>">Eliminar</a>

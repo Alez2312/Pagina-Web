@@ -41,7 +41,7 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font4">
                 <label class="fecha_adopcion_final">Fecha adopción final:</label>
-                <input type="date" pattern="dd-mm-yyyy" name="fecha_adopcion_final" id="fecha_adopcion_final" required>
+                <input type="date" name="fecha_adopcion_final" id="fecha_adopcion_final"  min="<?= date('Y-m-d'); ?>" max="2022-11-30" required>
             </div>
             <div class="font font5">
                 <label class="foto">Foto:</label>

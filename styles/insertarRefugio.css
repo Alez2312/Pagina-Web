@@ -137,7 +137,6 @@ ul li:hover {
   border-radius: 30px;
   margin-left: 10.5%;
 }
-
 .toggle .toggle_button {
   position: relative;
   top: 2px;
@@ -149,7 +148,6 @@ ul li:hover {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .toggle.active {
   background: red;
 }
