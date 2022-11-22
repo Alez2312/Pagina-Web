@@ -61,7 +61,7 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 </div>
                 <div class="font font9">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="0" onclick="Animatedtoggle()">
+                    <div class="toggle" value="<?php echo $row['estado']; ?>" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
                         <input type="hidden" name="estado" id="estado">
                     </div>

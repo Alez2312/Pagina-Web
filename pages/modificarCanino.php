@@ -45,7 +45,7 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font6">
                     <label class="id_tipo_canino">Tipo canino:</label>
-                    <select class="select" name="id_tipo_canino" id="id_tipo_canino">
+                    <select class="select" name="id_tipo_canino" id="id_tipo_canino" value="<?php echo $row['id_tipo_canino']; ?>">
 
                         <?php $resultado = mysqli_query($conexion, $tipoCanino);
 

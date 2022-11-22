@@ -37,7 +37,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
             <a class="buttonsBusqueda" href="insertarAdultoMayor.php">Agregar</a>
             <form class="form" method="GET">
                 <div>
-                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
+                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por cédula">
                     <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
                     <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
                 </div>
@@ -57,7 +57,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
         <?php
         if (isset($_GET['enviar'])) {
             $busqueda = $_GET['busqueda'];
-            $consulta = $conexion->query("SELECT * FROM adultomayor WHERE nombre1 LIKE '%$busqueda%'");
+            $consulta = $conexion->query("SELECT * FROM adultomayor WHERE id LIKE '%$busqueda%'");
 
             while ($row = $consulta->fetch_array()) { ?>
                 <div class="table_item"><?php echo $row['id']; ?></div>

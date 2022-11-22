@@ -19,19 +19,18 @@ $perfil = "SELECT * FROM perfil";
         <form class="usuario_form" method="post" name="usuario" action="procesoInsertarUsuario.php" onsubmit="return validated()">
             <div class="font">
                 <label class="cc">Cédula:</label>
-                <input type="number" name="cc" id="cc">
+                <input type="number" name="cc" id="cc" required>
                 <small id="msgId" class="small"></small>
+
             </div>
             <div class="font font2">
                 <label class="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-                <small id="msgNombre" class="small"></small>
+                <input type="text" name="nombre" id="nombre" required>
             </div>
             <div class="font font3">
-                <label class="clave">Clave:</label>
-                <input type="text" name="clave" id="clave">
-                <span class"campo">Mostrar</span>
-                <small id="msgClave" class="small"></small>
+                <label for="password" class="clave">Clave:</label>
+                <input type="password" name="clave" id="clave" required>
+                <span class="campo">Mostrar</span>
             </div>
             <div class="font font4">
                 <label class="perfil">Perfil:</label>
@@ -54,7 +53,7 @@ $perfil = "SELECT * FROM perfil";
                 </div>
             </div>
             <button type="submit">Guardar</button>
-            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/inicio.php'" type="reset">Cancelar</button>
+            <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/login.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/usuario.js"></script>

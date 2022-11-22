@@ -13,12 +13,6 @@ $refugio = "SELECT * FROM refugio";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Adulto mayor</title>
     <link rel="stylesheet" href="../styles/insertarAdultoMayor.css">
-    <style>
-        .datos {
-            color: violet;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
