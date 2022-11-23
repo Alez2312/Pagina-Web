@@ -1,9 +1,15 @@
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 body {
   height: 100%;
-  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 220, 0.2),
+    rgba(0, 0, 255, 0.3)
+  );
   font-family: sans-serif;
 }
 .title,
@@ -12,17 +18,31 @@ nav {
   position: relative;
   z-index: 2;
 }
-
 ul {
   text-transform: uppercase;
   text-align: left;
   display: inline;
   margin: 0;
   padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 0;
+}
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+ul ul li {
+  float: none;
+  width: 150px;
+}
+ul li:hover > ul {
+  display: block;
 }
 ul li {
   font: bold 12px/18px sans-serif;
@@ -33,22 +53,14 @@ ul li {
   background: blue;
   color: #ffffff;
   cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
 }
 ul li:hover {
-  background: white;
+  color: white;
+  border-bottom: 4px solid white;
 }
 .link_a {
   text-decoration: none;
   color: white;
-}
-.link_a:hover {
-  text-decoration: none;
-  color: black;
 }
 .buttonsBusqueda {
   border: black solid 1px;
@@ -61,7 +73,7 @@ ul li:hover {
   text-decoration: none;
   cursor: pointer;
 }
-.buttonsBusqueda:hover{
+.buttonsBusqueda:hover {
   background-color: blue;
   color: white;
 }
@@ -72,7 +84,6 @@ ul li:hover {
 .form {
   display: inline-block;
 }
-
 .container_table {
   margin: 50px auto;
   background: transparent;
@@ -81,7 +92,6 @@ ul li:hover {
   grid-auto-rows: 40px;
   box-shadow: 0 0 20px #333;
 }
-
 .table_title {
   grid-column-start: 1;
   grid-column-end: 10;
@@ -93,46 +103,18 @@ ul li:hover {
   font-weight: bold;
   font-size: 30px;
 }
-
 .table_header,
 .table_item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .table_header {
   font-weight: bold;
 }
-
 .table_item {
   padding: 5px;
   font-size: 20px;
-}
-ul li:hover {
-  background: #ffffff;
-  color: #000000;
-}
-
-ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #ffffff;
-  padding: 0;
-}
-
-ul ul li {
-  float: none;
-  width: 150px;
-}
-ul ul a {
-  line-height: 120%;
-  padding: 10px 15px;
-}
-ul li:hover > ul {
-  display: block;
 }
 .buttonME {
   font-size: 16px;
@@ -145,7 +127,7 @@ ul li:hover > ul {
 .buttonME:hover {
   color: black;
 }
-.input_busqueda{
+.input_busqueda {
   height: 25px;
   border-radius: 5px;
 }

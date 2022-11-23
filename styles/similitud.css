@@ -1,26 +1,27 @@
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 body {
   height: 100%;
-  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 220, 0.2),
+    rgba(0, 0, 255, 0.3)
+  );
   font-family: sans-serif;
 }
 .title,
 nav {
   text-align: center;
 }
-
 ul {
   text-transform: uppercase;
   text-align: left;
   display: inline;
   margin: 0;
   padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 ul li {
   font: bold 12px/18px sans-serif;
@@ -31,21 +32,11 @@ ul li {
   background: blue;
   color: white;
   cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
 }
 ul li:hover {
-  background: white;
+  color: white;
+  border-bottom: 4px solid white;
 }
-
-ul li:hover {
-  background: white;
-  color: black;
-}
-
 ul ul {
   display: none;
   position: absolute;
@@ -54,26 +45,20 @@ ul ul {
   background: white;
   padding: 0;
 }
-
-ul ul li {
-  float: none;
-  width: 150px;
-}
 ul ul a {
   line-height: 120%;
   padding: 10px 15px;
 }
+ul ul li {
+  float: none;
+  width: 150px;
+}
 ul li:hover > ul {
   display: block;
 }
-
 .link_a {
   text-decoration: none;
   color: white;
-}
-.link_a:hover {
-  text-decoration: none;
-  color: black;
 }
 
 .container {
@@ -85,39 +70,39 @@ ul li:hover > ul {
   grid-auto-rows: 100%;
   box-shadow: 0 0 20px #333;
 }
-.imagenes{
+.imagenes {
   width: min-content;
   height: 250px;
   margin-top: 200px;
   margin-left: 20%;
 }
-.imagen1{
+.imagen1 {
   width: min-content;
   height: 200px;
-  margin-top: -25%;
+  margin-top: -20%;
   margin-left: 50%;
 }
-.imagen2{
+.imagen2 {
   width: min-content;
   height: 200px;
-  margin-top: -13.65%;
+  margin-top: -11%;
   margin-left: 75%;
 }
-.imagen3{
+.imagen3 {
   width: min-content;
-  height: 200px;  
+  height: 200px;
   margin-top: 8%;
   margin-left: 50%;
 }
-.imagen4{
+.imagen4 {
   width: min-content;
   height: 200px;
-  margin-top: -13.7%;
+  margin-top: -11%;
   margin-left: 75%;
 }
-.adulto{
+.adulto {
   height: 250px;
 }
-.nombre{
+.nombre {
   font-size: x-large;
 }

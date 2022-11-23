@@ -1,9 +1,15 @@
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 body {
   height: 100%;
-  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 220, 0.2),
+    rgba(0, 0, 255, 0.3)
+  );
   font-family: sans-serif;
   text-align: center;
 }
@@ -115,17 +121,12 @@ body {
   width: 169px;
   z-index: 1;
 }
-
 ul {
   text-transform: uppercase;
   text-align: left;
   display: inline;
   margin: 0;
   padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   z-index: 999;
 }
 ul li {
@@ -136,26 +137,15 @@ ul li {
   padding: 15px 20px;
   background: blue;
   cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
 }
 ul li:hover {
-  background: white;
-  color: black;
+  color: white;
+  border-bottom: 4px solid white;
 }
-
 .link_a {
   text-decoration: none;
   color: white;
 }
-.link_a:hover {
-  text-decoration: none;
-  color: black;
-}
-
 ul ul {
   display: none;
   position: absolute;
@@ -164,7 +154,6 @@ ul ul {
   background: #ffffff;
   padding: 0;
 }
-
 ul ul li {
   float: none;
   width: 150px;

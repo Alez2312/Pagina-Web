@@ -57,7 +57,7 @@ $canino = "SELECT * FROM canino";
                     </div>
                     <div class="imagen3">
                         <img class="canino" src="../caninos/Pug01.jpg">
-                        <label class="nombre">RottWeiler 90%</label>
+                        <label class="nombre">Pug 90%</label>
                     </div>
                     <div class="imagen4">
                         <img class="canino" src="../caninos/dalmata.jpg">
