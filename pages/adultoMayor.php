@@ -24,7 +24,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <li><a class="link_a" href="refugio.php">Refugio</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
@@ -34,12 +34,12 @@ $adultoMayor = "SELECT * FROM adultomayor";
     </div>
     <div class="container_table">
         <div class="buscar">
-            <a class="buttonsBusqueda" href="insertarAdultoMayor.php">Agregar</a>
+        <input class="buttonsBusqueda" type="reset" value="Agregar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/insertarAdultoMayor.php'">
             <form class="form" method="GET">
                 <div>
                     <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por cédula">
                     <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
-                    <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
+                    <input class="buttonsBusqueda" type="reset" value="Cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'">
                 </div>
             </form>
         </div>
@@ -70,7 +70,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <div class="table_item"><?php echo $row['foto']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado'] == 1) { ?>
+                    if ($row['estado'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>
@@ -96,7 +96,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <div class="table_item"><?php echo $row['foto']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado'] == 1) { ?>
+                    if ($row['estado'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>

@@ -54,25 +54,36 @@ $adultoMayor = "SELECT * FROM adultomayor WHERE id = '$id'";
                 <div class="font font8">
                     <label class="foto">Foto:</label>
                     <div>
-                        <img class="imagen" src="../Rostros encontrados/<?php echo $row['foto'] ?>">
-                        <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>">
+                        <div style="text-align: center;">
+                            <img class="imagen" src="../Rostros encontrados/<?php echo $row['foto'] ?>">
+                            <?php echo $row['foto']; ?><br>
+                        </div>
+                        <input type="file" name="foto" id="foto" value="<?php echo $row['foto'] ?>">
                     </div>
                     <small id="msgFoto" class="small"></small>
                 </div>
                 <div class="font font9">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="<?php echo $row['estado']; ?>" onclick="Animatedtoggle()">
+                    <div class="toggle" id="stateEstado" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
-                        <input type="hidden" name="estado" id="estado">
+                        <input type="hidden" name="estado" id="estado" value="<?php echo $row['estado']; ?>">
                     </div>
                 </div>
-            <?php }
+            <?php
+                $estado = $row['estado'];
+            }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
             <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/adultoMayor.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/adultoMayor.js"></script>
+    <?php
+    if ($estado == 0) { ?>
+        <script>
+            Animatedtoggle();
+        </script>
+    <?php } ?>
 </body>
 
 </html>

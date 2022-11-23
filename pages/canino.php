@@ -28,23 +28,23 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
-                        <li><a class="link_a" href="perfilUsuario.php">Perfil</a></li>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </div>
     <div class="container_table">
-        <a class="buttonAgregar" href="insertarCanino.php">Agregar</a>
-        <form action="" method="GET">
-            <div class="buscar">
+        <div class="buscar">
+            <input class="buttonsBusqueda" type="reset" value="Agregar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/insertarCanino.php'">
+            <form class="form" action="" method="GET">
                 <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
-                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'">
-            </div>
-        </form>
+                <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
+                <input class="buttonsBusqueda" type="reset" value="Cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'">
+            </form>
+        </div>
         <div class="table_title">Datos del canino</div>
         <div class="table_header">Código</div>
         <div class="table_header">Nombre</div>
@@ -95,7 +95,7 @@ INNER JOIN refugio ON canino.id_refugio=refugio.id_refugio";
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado_canino'] == 1) { ?>
+                    if ($row['estado_canino'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>

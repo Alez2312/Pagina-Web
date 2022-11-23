@@ -40,16 +40,15 @@ $perfil = "SELECT * FROM perfil";
 
                     while ($row2 = mysqli_fetch_assoc($resultado)) {
                     ?>
-                        <option value="<?php echo $row2['cod_perfil'] ?>"><?php echo $row2['descripcion'] ?>
-                        </option>
+                        <option value="<?php echo $row2['cod_perfil'] ?>"><?php echo $row2['descripcion'] ?></option>
                     <?php } ?>
                 </select>
             </div>
             <div class="font font5">
                 <label class="estado">Estado:</label>
-                <div class="toggle" value="0" onclick="Animatedtoggle()">
+                <div class="toggle" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>
-                    <input type="hidden" name="estado" id="estado">
+                    <input type="hidden" name="estado" id="estado" value="1">
                 </div>
             </div>
             <button type="submit">Guardar</button>

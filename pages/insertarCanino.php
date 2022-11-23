@@ -49,8 +49,8 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font6">
                 <label class="id_tipo_canino">Tipo canino:</label>
-                <select class="select" name="id_tipo_canino" id="id_tipo_canino">
-
+                <select class="select" name="id_tipo_canino" id="id_tipo_canino" required>
+                    <option value = ""> Seleccione un tipo de canino... </option>
                     <?php $resultado = mysqli_query($conexion, $tipoCanino);
 
                     while ($row = mysqli_fetch_assoc($resultado)) {
@@ -62,8 +62,8 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font7">
                 <label class="id_refugio">Refugio:</label>
-                <select class="select" name="id_refugio" id="">
-
+                <select class="select" name="id_refugio" id="" required>
+                <option value = ""> Seleccione un refugio... </option>
                     <?php $resultado = mysqli_query($conexion, $refugio);
 
                     while ($row2 = mysqli_fetch_assoc($resultado)) {
@@ -75,9 +75,9 @@ $refugio = "SELECT * FROM refugio";
             </div>
             <div class="font font8">
                 <label class="estado">Estado:</label>
-                <div class="toggle" value="0" onclick="Animatedtoggle()">
+                <div class="toggle" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>
-                    <input type="hidden" name="estado" id="estado">
+                    <input type="hidden" name="estado" id="estado" value="1">
                 </div>
             </div>
             <button type="submit" name="submit">Guardar</button>

@@ -25,9 +25,9 @@
             </div>
             <div class="font font3">
                 <label class="estado">Estado:</label>
-                <div class="toggle" value="0" onclick="Animatedtoggle()">
+                <div class="toggle" onclick="Animatedtoggle()">
                     <div class="toggle_button"></div>
-                    <input type="hidden" name="estado" id="estado">
+                    <input type="hidden" name="estado" id="estado" value="1">
                 </div>
             </div>
             <button type="submit">Guardar</button>

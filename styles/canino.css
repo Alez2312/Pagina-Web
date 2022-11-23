@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../fondo.jpg");
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
   font-family: sans-serif;
 }
 .title,
@@ -49,19 +50,27 @@ ul li:hover {
   text-decoration: none;
   color: black;
 }
-.buttonAgregar {
-  border: #000000 solid 1px;
+.buttonsBusqueda {
+  border: black solid 1px;
   border-radius: 5px;
   background-color: white;
   text-align: center;
-  color: #000000;
+  color: black;
   margin: 7px;
   font-size: large;
   text-decoration: none;
+  cursor: pointer;
 }
-.buttonAgregar:hover{
+.buttonsBusqueda:hover{
   background-color: blue;
   color: white;
+}
+.buscar {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.form {
+  display: inline-block;
 }
 
 .container_table {
@@ -136,15 +145,7 @@ ul li:hover > ul {
 .buttonME:hover {
   color: black;
 }
-
-.buscar{
-  padding: 8px 0;
-}
 .input_busqueda{
-  height: 25px;
-  border-radius: 5px;
-}
-.input_enviar{
   height: 25px;
   border-radius: 5px;
 }

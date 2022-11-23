@@ -41,7 +41,14 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font5">
                     <label class="foto">Foto:</label>
-                    <input type="file" name="foto" id="foto" value="<?php echo $row['foto']; ?>" required>
+                    <div>
+                        <div style="text-align: center;">
+                            <img class="imagen" src="../caninos/<?php echo $row['foto'] ?>">
+                            <?php echo $row['foto']; ?><br>
+                        </div>
+                        <input type="file" name="foto" id="foto" value="<?php echo $row['foto'] ?>">
+                    </div>
+                    <small id="msgFoto" class="small"></small>
                 </div>
                 <div class="font font6">
                     <label class="id_tipo_canino">Tipo canino:</label>
@@ -49,9 +56,9 @@ $refugio = "SELECT * FROM refugio";
 
                         <?php $resultado = mysqli_query($conexion, $tipoCanino);
 
-                        while ($row = mysqli_fetch_assoc($resultado)) {
+                        while ($row1 = mysqli_fetch_assoc($resultado)) {
                         ?>
-                            <option value="<?php echo $row['id_tipo_canino'] ?>"><?php echo $row['descripcion'] ?>
+                            <option value="<?php echo $row1['id_tipo_canino'] ?>"><?php echo $row1['descripcion'] ?>
                             </option>
                         <?php } ?>
                     </select>
@@ -71,18 +78,26 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="font font8">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="1" onclick="Animatedtoggle()">
+                    <div class="toggle" id="stateEstado" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
-                        <input type="hidden" name="estado" id="estado">
+                        <input type="hidden" name="estado" id="estado" value="<?php echo $row['estado_canino']; ?>">
                     </div>
                 </div>
-            <?php }
+            <?php
+                $estadoCanino = $row['estado_canino'];
+            }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
             <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/canino.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/canino.js"></script>
+    <?php
+    if ($estadoCanino == 0) { ?>
+        <script>
+            Animatedtoggle();
+        </script>
+    <?php } ?>
 </body>
 
 </html>

@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../fondo.jpg");
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
   font-family: sans-serif;
 }
 .title,
@@ -130,7 +131,6 @@ ul li:hover {
   background: blue;
   color: #ffffff;
   border-radius: 10px;
-  border: 1px solid #6ab4c7;
   transition: 0.5s;
 }
 .adultoMayor_form button:hover {
@@ -144,7 +144,7 @@ ul li:hover {
   height: 35px;
   background: green;
   border-radius: 30px;
-  margin-left: 21.5%;
+  margin-left: 17.5%;
 }
 .toggle .toggle_button {
   position: relative;
@@ -199,6 +199,8 @@ ul li:hover > ul {
   padding: 10px;
   width: 95%;
   border-radius: 5px;
-  margin: 20px auto;
-  
+  margin: 20px auto; 
+}
+.small{
+  color: red;
 }

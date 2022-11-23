@@ -8,10 +8,11 @@
 </head>
 
 <body>
-    <h1 class="title">Compañeros por similitud</h1>
     <div class="container">
         <form class="login_form" action="procesoLogin.php" method="POST" name="form">
-            <h2 class="title">Iniciar sesión</h2>
+            <h1 class="title">Compañeros por similitud</h1>
+            <img src="../fondos/icono.jpg" class="img">
+            <h2 class="h2">Iniciar sesión</h2>
             <hr class="hr">
             <?php
             if (isset($_GET['error'])) { ?>

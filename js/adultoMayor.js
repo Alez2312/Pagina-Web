@@ -21,7 +21,7 @@ function validated() {
   let msg = document.querySelectorAll('small[id^="msg"]');
   let counter = 0;
 
-  if (cc == null || cc.length < 7) {
+  if (cc.length < 7) {
     msgId.innerHTML = "* Cédula invalida";
     validation = false;
   }
@@ -54,6 +54,10 @@ function validated() {
 let toggle = document.querySelector(".toggle");
 
 function Animatedtoggle() {
-  toggle.classList.toggle("active");
-  var state = (document.getElementById("estado").value = "1");
+  var togle = toggle.classList.toggle("active");
+  if(togle){
+    document.getElementById("estado").value = "0";
+  }else {
+    document.getElementById("estado").value = "1";
+  }
 }

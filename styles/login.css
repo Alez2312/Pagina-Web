@@ -6,20 +6,32 @@
     text-align: center;
     color: #130f40;
     font-weight: 400;
-    margin-bottom: 3rem;
+}
+
+.img{
+    margin-left: 30%;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 150px;
+}
+
+.h2 {
+    text-align: center;
+    margin-top: 10%;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../fondo.jpg");
+    height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
     background-repeat: no-repeat;
     background-size: 100% 172%;
     font-family: sans-serif;
 }
 
 .container {
-    padding-left: 37%;
+    padding-left: 33.5%;
     display: inline-block;
     justify-content: center;
     align-items: center;
@@ -27,9 +39,9 @@ body {
 
 .login_form {
     background-color: white;
-    margin: 0px 72px;
-    width: 360px;
-    padding: 4rem 2rem;
+    margin: 10px 72px;
+    width: 440px;
+    padding: 1px 30px 20px 30px;
     border-radius: 1rem;
     box-shadow: 0 10px 25px rgba(92, 99, 105, .7);
 }

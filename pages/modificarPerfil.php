@@ -32,18 +32,26 @@ $perfil = "SELECT * FROM perfil WHERE cod_perfil = '$id'";
                 </div>
                 <div class="font font3">
                     <label class="estado">Estado:</label>
-                    <div class="toggle" value="<?php echo $row['estado']; ?>" onclick="Animatedtoggle()">
+                    <div class="toggle" id="stateEstado" onclick="Animatedtoggle()">
                         <div class="toggle_button"></div>
-                        <input type="hidden" name="estado" id="estado">
+                        <input type="hidden" name="estado" id="estado" value="<?php echo $row['estado']; ?>">
                     </div>
                 </div>
-            <?php }
+            <?php
+                $estado = $row['estado'];
+            }
             mysqli_free_result($resultado); ?>
             <button type="submit" name="submit">Guardar</button>
             <button onclick="location.href='http://localhost/xampp/Pagina-Web/pages/perfil.php'" type="reset">Cancelar</button>
         </form>
     </div>
     <script src="../js/perfil.js"></script>
+    <?php
+    if ($estado == 0) { ?>
+        <script>
+            Animatedtoggle();
+        </script>
+    <?php } ?>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ $refugio = "SELECT * FROM refugio";
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
@@ -34,14 +34,16 @@ $refugio = "SELECT * FROM refugio";
         </nav>
     </div>
     <div class="container_table">
-        <a class="buttonAgregar" href="insertarRefugio.php">Agregar</a>
-        <form action="" method="GET">
-            <div class="buscar">
-                <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
-                <input class="input_enviar" type="submit" name="enviar" value="Buscar">
-                <input class="input_enviar" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
-            </div>
-        </form>
+        <div class="buscar">
+            <input class="buttonsBusqueda" type="reset" value="Agregar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/insertarRefugio.php'">
+            <form class="form" method="GET">
+                <div>
+                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
+                    <input class="buttonsBusqueda" type="submit" name="Enviar" value="Buscar">
+                    <input class="buttonsBusqueda" type="reset" value="Cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
+                </div>
+            </form>
+        </div>
         <div class="table_title">Datos de refugio</div>
         <div class="table_header">Código</div>
         <div class="table_header">Nombre</div>
@@ -55,7 +57,11 @@ $refugio = "SELECT * FROM refugio";
             $busqueda = $_GET['busqueda'];
             $consulta = $conexion->query("SELECT * FROM refugio WHERE nombre LIKE '%$busqueda%'");
 
-            while ($row = $consulta->fetch_array()) { ?>
+            while ($row = $consulta->fetch_array()) {
+                $consultaValidarRefugio = "SELECT * FROM canino WHERE id_refugio = '" . $row['id_refugio'] . "'";
+                $resultadoValidarRefugio = mysqli_query($conexion, $consultaValidarRefugio);
+                $numFilas = mysqli_num_rows($resultadoValidarRefugio);
+        ?>
                 <div class="table_item"><?php echo $row['id_refugio']; ?></div>
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
@@ -63,7 +69,7 @@ $refugio = "SELECT * FROM refugio";
                 <div class="table_item"><?php echo $row['celular']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado_refugio'] == 1) { ?>
+                    if ($row['estado_refugio'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>
@@ -72,13 +78,23 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php
+                    echo $numFilas;
+                    if ($numFilas > 0) { ?>
+                        <a class="">Eliminar</a>
+                    <?php } else { ?>
+                        <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php } ?>
                 </div>
             <?php }
         } else {
             $resultado = mysqli_query($conexion, $refugio);
 
-            while ($row = mysqli_fetch_assoc($resultado)) { ?>
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                $consultaValidarRefugio = "SELECT * FROM canino WHERE id_refugio = '" . $row['id_refugio'] . "'";
+                $resultadoValidarRefugio = mysqli_query($conexion, $consultaValidarRefugio);
+                $numFilas = mysqli_num_rows($resultadoValidarRefugio);
+            ?>
                 <div class="table_item"><?php echo $row['id_refugio']; ?></div>
                 <div class="table_item"><?php echo $row['nombre']; ?></div>
                 <div class="table_item"><?php echo $row['direccion']; ?></div>
@@ -86,7 +102,7 @@ $refugio = "SELECT * FROM refugio";
                 <div class="table_item"><?php echo $row['celular']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado_refugio'] == 1) { ?>
+                    if ($row['estado_refugio'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>
@@ -95,7 +111,12 @@ $refugio = "SELECT * FROM refugio";
                 </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php
+                    if ($numFilas > 0) { ?>
+                        <a class="buttonNME">Eliminar</a>
+                    <?php } else { ?>
+                        <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php } ?>
                 </div>
         <?php }
         } ?>

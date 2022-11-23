@@ -13,8 +13,12 @@ function validated() {
 let toggle = document.querySelector(".toggle");
 
 function Animatedtoggle() {
-  toggle.classList.toggle("active");
-  var state = (document.getElementById("estado").value = "1");
+  var togle = toggle.classList.toggle("active");
+  if(togle){
+    document.getElementById("estado").value = "0";
+  }else {
+    document.getElementById("estado").value = "1";
+  }
 }
 
 document.querySelector('.campo').addEventListener('click', e => {

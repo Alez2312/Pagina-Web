@@ -24,7 +24,7 @@ $adultoMayor = "SELECT * FROM adultomayor";
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuario.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
@@ -38,16 +38,15 @@ $adultoMayor = "SELECT * FROM adultomayor";
         <img class="image-3" />
         <img class="image-4" />
         <img class="image-5" />
+        <img class="image-6" />
+        <img class="image-7" />
+        <img class="image-8" />
     </div>
     <div class="descripcion">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod reprehenderit doloremque eligendi, magnam,
-        nemo
-        eius blanditiis vero harum libero obcaecati quis. Obcaecati sint placeat animi, nostrum repudiandae iste
-        blanditiis aperiam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem debitis accusamus nisi unde culpa adipisci
-        impedit quas eum nobis qui consectetur recusandae, incidunt dolore ratione maiores? Amet culpa quam rerum?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod reprehenderit doloremque eligendi, magnam,
-        nemo
+    <b>Nuestra misión: </b> Maximizar el potencial de nuestros clientes de la tercera edad y encontrar la mejor opción de adoptar un canino. <br><br>
+    <b>Nuestros valores: </b> Como empresa e individuos son honestidad, lealtad, respeto, pasión por los desafíos, superación constante y creatividad.<br><br>
+    <b>Nuestra visión: </b> Ser una de las mejores empresas de desarrollo web, reconocida por la innovación, simpleza y generación de valor de sus soluciones, con una alta productividad y 
+    calidad humana.
     </div>
     </div>
     <script src="../login.js"></script>

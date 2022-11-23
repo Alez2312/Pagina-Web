@@ -21,11 +21,11 @@ $tipoCanino = "SELECT * FROM tipocanino";
             <ul>
                 <li><a class="link_a" href="inicio.php">Inicio</a></li>
                 <li><a class="link_a" href="canino.php">Canino</a></li>
-                <li><a class="link_a" href="refugio.php">Refugio</a></li>
+                <li><a class="link_a" href="tipo_canino.php">Refugio</a></li>
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuarioPerfil.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
@@ -35,14 +35,14 @@ $tipoCanino = "SELECT * FROM tipocanino";
     </div>
     <div class="container_table">
         <div class="buscar">
-        <a class="buttonsBusqueda" href="insertarTipoCanino.php">Agregar</a>
-        <form class="form" method="GET">
-            <div>
-                <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por descripción">
-                <input class="buttonsBusqueda" type="submit" name="enviar" value="Buscar">
-                <input class="buttonsBusqueda" type="reset" value="cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'">
-            </div>
-        </form>
+            <input class="buttonsBusqueda" type="submit" value="Agregar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/insertarTipoCanino.php'">
+            <form class="form" method="GET">
+                <div>
+                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por descripción">
+                    <input class="buttonsBusqueda" type="submit" name="Enviar" value="Buscar">
+                    <input class="buttonsBusqueda" type="reset" value="Cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/tipoCanino.php'">
+                </div>
+            </form>
         </div>
         <div class="table_title">Datos del tipo de canino</div>
         <div class="table_header">Código</div>
@@ -59,7 +59,7 @@ $tipoCanino = "SELECT * FROM tipocanino";
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado'] == 1) { ?>
+                    if ($row['estado'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>
@@ -74,12 +74,16 @@ $tipoCanino = "SELECT * FROM tipocanino";
         } else {
             $resultado = mysqli_query($conexion, $tipoCanino);
 
-            while ($row = mysqli_fetch_assoc($resultado)) { ?>
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                $consultaValidarTipoCanino = "SELECT * FROM canino WHERE id_tipo_canino = '" . $row['id_tipo_canino'] . "'";
+                $resultadoValidarTipoCanino = mysqli_query($conexion, $consultaValidarTipoCanino);
+                $numFilas = mysqli_num_rows($resultadoValidarTipoCanino);
+            ?>
                 <div class="table_item"><?php echo $row['id_tipo_canino']; ?></div>
                 <div class="table_item"><?php echo $row['descripcion']; ?></div>
                 <div class="table_item" name="estado">
                     <?php
-                    if ($row['estado'] == 1) { ?>
+                    if ($row['estado'] == 0) { ?>
                         <label>Inactivo</label>
                     <?php
                     } else { ?>
@@ -88,7 +92,12 @@ $tipoCanino = "SELECT * FROM tipocanino";
                 </div>
                 <div class="table_item">
                     <a class="buttonME" href="modificarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Modificar</a> |
-                    <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>
+                    <?php
+                    if ($numFilas > 0) { ?>
+                        <a class="buttonNME">Eliminar</a>
+                    <?php } else { ?>
+                        <a class="buttonME" href="eliminarTipoCanino.php?id=<?php echo $row['id_tipo_canino']; ?>">Eliminar</a>
+                    <?php } ?>
                 </div>
         <?php }
         } ?>

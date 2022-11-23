@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: url("../fondo.jpg");
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
   font-family: sans-serif;
 }
 
@@ -57,39 +58,33 @@ ul li:hover {
   text-decoration: none;
   color: black;
 }
-
 .buttonsBusqueda {
-  border: #000000 solid 1px;
+  border: black solid 1px;
   border-radius: 5px;
   background-color: white;
   text-align: center;
-  color: #000000;
-  font-size: 15px;
-  cursor: pointer;
+  color: black;
+  margin: 7px;
+  font-size: large;
   text-decoration: none;
-  padding: 2px;
+  cursor: pointer;
 }
-
-.buttonsBusqueda:hover {
+.buttonsBusqueda:hover{
   background-color: blue;
   color: white;
 }
-
 .buscar {
-  padding: 8px 0;
   grid-column-start: 1;
-  grid-column-end: 11;
+  grid-column-end: 5;
 }
 
 .form {
   display: inline-block;
 }
-
 .input_busqueda {
   height: 28px;
   border-radius: 5px;
 }
-
 .container_table {
   margin: inherit;
   background: transparent;

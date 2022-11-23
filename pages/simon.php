@@ -25,7 +25,7 @@ $simon = "SELECT * FROM simon";
                 <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
                 <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a class="link_a" href="programacion.php">Programación</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
                         <li><a class="link_a" href="usuarioPerfil.php">Usuario</a></li>
                         <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>

@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../fondo.jpg");
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
   font-family: sans-serif;
 }
 .title,
@@ -72,9 +73,8 @@ ul li:hover {
   padding: 15px 0 15px 0;
 }
 .canino_form .font5 {
-  align-items: flex-start;
-  justify-content: left;
-  padding: 15px 0 15px 0;
+  display: flex;
+  padding-top: 15px;
 }
 .canino_form .font6 {
   align-items: flex-start;
@@ -105,7 +105,7 @@ ul li:hover {
   margin: 0 22px 0 0;
 }
 .foto {
-  margin: 0 153px 0 0;
+  margin: 65px 155px 0 0;
 }
 .id_tipo_canino {
   margin: 0 97px 0 0;
@@ -160,7 +160,7 @@ ul li:hover {
   height: 35px;
   background: green;
   border-radius: 30px;
-  margin-left: 21.5%;
+  margin-left: 23.5%;
 }
 .toggle .toggle_button {
   position: relative;
@@ -223,5 +223,11 @@ ul li:hover > ul {
   width: 95%;
   border-radius: 5px;
   margin: 20px auto;
-  
+}
+
+.imagen{
+  display: block;
+  width:100px;
+  height:100px;
+  margin: 10px 125px;
 }

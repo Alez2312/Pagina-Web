@@ -4,7 +4,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../fondo.jpg");
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
   background-repeat: no-repeat;
   background-size: 100% 220%;
   font-family: sans-serif;
