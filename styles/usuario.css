@@ -1,55 +1,24 @@
-body {
-  background: rgb(175, 118, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(175, 118, 180, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+*,::before,::after{
+  box-sizing: border-box;
 }
-.title,
-nav {
+body {
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  font-family: sans-serif;
+}
+.title{
   text-align: center;
   position: relative;
   z-index: 2;
-}
-
-ul {
-  text-transform: uppercase;
-  text-align: left;
-  display: inline;
-  margin: 0;
-  padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
-ul li {
-  font: bold 12px/18px sans-serif;
-  display: inline-block;
-  margin-right: -5px;
-  position: relative;
-  padding: 15px 20px;
-  background: #689ed1;
-  color: #ffffff;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-}
-ul li:hover {
-  background: #ffffff;
-  color: #f7f7f7;
 }
 .container {
   position: absolute;
   z-index: 1;
   margin: 40px 28%;
   width: 45%;
-  background: #dedede;
+  background: transparent;
   border-radius: 5px;
+  box-shadow: 0 0 20px #333;
 }
 
 .usuario_form {
@@ -62,27 +31,41 @@ ul li:hover {
   padding-top: 15px;
 }
 .usuario_form .font3 {
+  position: relative;
   padding-top: 15px;
 }
 .usuario_form .font4 {
   padding-top: 15px;
 }
 .usuario_form .font5 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
   padding: 15px 0 15px 0;
 }
+.campo {
+  position: absolute;
+  left: 55%;
+  top: 43%;
+  cursor: pointer;
+  padding: 2px 10px;
+  background-color: #dadada;
+}
 
-.id {
-  margin: 0 30px 0 0;
+.cc {
+  margin: 0 23px 0 0;
 }
 .nombre {
-  margin: 0 20px 0 0;
+  margin: 0 18px 0 0;
+}
+.clave   {
+  margin: 0 37px 0 0;
 }
 .perfil {
-  margin: 0 40px 0 0;
+  margin: 0 44px 0 0;
 }
 .estado {
-  margin: 0 30px 0 0;
-  padding: auto;
+  margin: 10px 25px 0 0;
 }
 .usuario_form input {
   height: 40px;
@@ -100,7 +83,7 @@ ul li:hover {
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  background: #689ed1;
+  background:blue;
   color: #ffffff;
   border-radius: 10px;
   border: 1px solid #6ab4c7;
@@ -109,44 +92,6 @@ ul li:hover {
 .usuario_form button:hover {
   background: #ffffff;
   color: #000000;
-}
-
-:root {
-  --color-green: green;
-  --color-red: red;
-  --color-button: #fdffff;
-  --color-black: #000;
-}
-.switch-button {
-  display: inline-table;
-}
-.switch-button .switch-button__checkbox {
-  display: none;
-}
-.switch-button .switch-button__label {
-  background-color: var(--color-red);
-  width: 50px;
-  height: 30px;
-  border-radius: 30px;
-  display: inline-block;
-  position: relative;
-}
-.switch-button .switch-button__label:before {
-  transition: 0.2s;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: var(--color-button);
-  content: "";
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label {
-  background-color: var(--color-green);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
-  transform: translateX(20px);
 }
 
 ul li:hover {
@@ -173,4 +118,40 @@ ul ul a {
 }
 ul li:hover > ul {
   display: block;
+}
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: green;
+  border-radius: 30px;
+  margin-left: 96px;
+}
+
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 27px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: red;
+}
+
+.toggle.active .toggle_button {
+  left: 3px;
+}
+.small {
+  color: red;
+}
+.select{
+  font-size: 16px;
+  height: 36px;
+  width: 150px;
 }

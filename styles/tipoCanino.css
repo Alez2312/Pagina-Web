@@ -1,15 +1,22 @@
-body {
-  background: rgb(135, 198, 223);
-  background: linear-gradient(
-    90deg,
-    rgb(118, 166, 180) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
-.title, nav {
-    text-align: center;
-    position: relative;
-    z-index: 2;
+body {
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 220, 0.2),
+    rgba(0, 0, 255, 0.3)
+  );
+  font-family: sans-serif;
+}
+.title,
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 ul {
   text-transform: uppercase;
@@ -17,10 +24,6 @@ ul {
   display: inline;
   margin: 0;
   padding: 15px 4px 17px 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 ul li {
   font: bold 12px/18px sans-serif;
@@ -28,130 +31,117 @@ ul li {
   margin-right: -5px;
   position: relative;
   padding: 15px 20px;
-  background: #689ed1;
-  color: #000000;
+  background: blue;
+  color: white;
   cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
 }
 ul li:hover {
+  color: white;
+  border-bottom: 4px solid white;
+}
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: #ffffff;
-  color: #000000;
+  padding: 0;
 }
-.container {
-    position: relative;
-    margin: 20px auto;
-    width: 45%;
-    background: #dedede;
-    border-radius: 5px;
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
 }
-
-.tipoCanino_form {
-    padding: 20px 110px;
+ul ul li {
+  float: none;
+  width: 150px;
 }
-.tipoCanino_form .font {
-    font-size: 18px;
+ul li:hover > ul {
+  display: block;
 }
-.tipoCanino_form .font2 {
-    padding: 15px;
+.link_a {
+  text-decoration: none;
+  color: white;
 }
-.id {
-    margin: 0 72px 0 15px;
+.buttonsBusqueda {
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  color: black;
+  margin: 7px;
+  font-size: large;
+  text-decoration: none;
+  cursor: pointer;
 }
-.estado {
-    margin: 0 40px 0 15px;
-    padding: auto;
+.buttonsBusqueda:hover {
+  background-color: blue;
+  color: white;
 }
-.tipoCanino_form input {
-    height: 40px;
-    width: 350px;
-    padding: 0 5px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid silver;
-}
-.tipoCanino_form button {
-    margin: 45px 0 30px 0;
-    height: 45px;
-    width: 120px;
-    font-size: 20px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    background: #689ed1;
-    color: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #6ab4c7;
-    transition: .5s;
-}
-.tipoCanino_form button:hover {
-    background: #ffffff;
-    color: #000000;
+.buscar {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
 
-:root {
-    --color-green: green;
-    --color-red: red;
-    --color-button: #fdffff;
-    --color-black: #000;
+.form {
+  display: inline-block;
 }
-.switch-button {
-    display: inline-table;
+
+.input_busqueda {
+  height: 28px;
+  border-radius: 5px;
 }
-.switch-button .switch-button__checkbox {
-    display: none;
+
+.container_table {
+  margin: inherit;
+  background: transparent;
+  border-radius: 5px;
+  display: grid;
+  grid-auto-rows: 40px;
+  box-shadow: 0 0 20px #333;
 }
-.switch-button .switch-button__label {
-    background-color: var(--color-red);
-    width: 50px;
-    height: 30px;
-    border-radius: 30px;
-    display: inline-block;
-    position: relative;
+
+.table_title {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
 }
-.switch-button .switch-button__label:before {
-    transition: .2s;
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: var(--color-button);
-    content: '';
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+
+.table_header,
+.table_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.switch-button .switch-button__checkbox:checked + .switch-button__label {
-    background-color: var(--color-green);
+
+.table_header {
+  font-weight: bold;
 }
-.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
-    transform: translateX(20px);
+
+.table_item {
+  padding: 5px;
+  font-size: 20px;
 }
-ul li:hover {
-    background: #ffffff;
-    color: #000000;
-  }
-  
-  ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    padding: 0;
-  }
-  
-  ul ul li {
-    float: none;
-    width: 150px;
-  }
-  ul ul a {
-    line-height: 120%;
-    padding: 10px 15px;
-  }
-  ul li:hover > ul {
-    display: block;
-  }
-  
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
+}
+.buttonNME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: default;
+  font-weight: bold;
+  color: gray;
+}

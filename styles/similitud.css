@@ -1,0 +1,108 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 220, 0.2),
+    rgba(0, 0, 255, 0.3)
+  );
+  font-family: sans-serif;
+}
+.title,
+nav {
+  text-align: center;
+}
+ul {
+  text-transform: uppercase;
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -5px;
+  position: relative;
+  padding: 15px 20px;
+  background: blue;
+  color: white;
+  cursor: pointer;
+}
+ul li:hover {
+  color: white;
+  border-bottom: 4px solid white;
+}
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 0;
+}
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+ul ul li {
+  float: none;
+  width: 150px;
+}
+ul li:hover > ul {
+  display: block;
+}
+.link_a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  margin: 20px;
+  height: 700px;
+  background: transparent;
+  border-radius: 5px;
+  display: grid;
+  grid-auto-rows: 100%;
+  box-shadow: 0 0 20px #333;
+}
+.imagenes {
+  width: min-content;
+  height: 250px;
+  margin-top: 200px;
+  margin-left: 20%;
+}
+.imagen1 {
+  width: min-content;
+  height: 200px;
+  margin-top: -20%;
+  margin-left: 50%;
+}
+.imagen2 {
+  width: min-content;
+  height: 200px;
+  margin-top: -11%;
+  margin-left: 75%;
+}
+.imagen3 {
+  width: min-content;
+  height: 200px;
+  margin-top: 8%;
+  margin-left: 50%;
+}
+.imagen4 {
+  width: min-content;
+  height: 200px;
+  margin-top: -11%;
+  margin-left: 75%;
+}
+.adulto {
+  height: 250px;
+}
+.nombre {
+  font-size: x-large;
+}

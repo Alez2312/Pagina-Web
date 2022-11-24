@@ -1,11 +1,12 @@
-var id = document.getElementById('idTipoCanino')
-var descripcion = document.getElementById('descripcion')
 
-function validated() {
-    if (id.value != "admin") {
-        id.style.border = "1px solid red";
-        id_error.style.display = "block";
-        id.focus();
-        return false;
-    }
+
+let toggle = document.querySelector(".toggle");
+
+function Animatedtoggle() {
+  var togle = toggle.classList.toggle("active");
+  if(togle){
+    document.getElementById("estado").value = "0";
+  }else {
+    document.getElementById("estado").value = "1";
+  }
 }

@@ -1,0 +1,206 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  font-family: sans-serif;
+}
+.title,
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+ul {
+  text-transform: uppercase;
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -5px;
+  position: relative;
+  padding: 15px 20px;
+  background: #689ed1;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #ffffff;
+  color: #f7f7f7;
+}
+.container {
+  position: absolute;
+  z-index: 1;
+  margin: 40px 28%;
+  width: 45%;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333;
+}
+
+.adultoMayor_form {
+  padding: 20px 110px;
+}
+.adultoMayor_form .font {
+  font-size: 18px;
+}
+.adultoMayor_form .font2 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font3 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font4 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font5 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font6 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font7 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font8 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font9 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 15px 0 15px 0;
+}
+
+.id {
+  margin: 0 82px 0 0;
+}
+.nombre1 {
+  margin: 0 20px 0 0;
+}
+.nombre2 {
+  margin: 0 2px 0 0;
+}
+.apellido1 {
+  margin: 0 20px 0 0;
+}
+.celular {
+  margin: 0 82px 0 0;
+}
+.direccion {
+  margin: 0 64px 0 0;
+}
+.foto {
+  margin: 0 100px 0 0;
+}
+.estado {
+  margin: 10px 30% 0 0;
+}
+.adultoMayor_form input {
+  height: 40px;
+  width: 350px;
+  padding: 0 5px;
+  font-size: medium;
+  outline: none;
+}
+.adultoMayor_form button {
+  margin: 45px 0 30px 0;
+  height: 45px;
+  width: 120px;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: blue;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.adultoMayor_form button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: green;
+  border-radius: 30px;
+  margin-left: 17.5%;
+}
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 27px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toggle.active {
+  background: red;
+}
+
+.toggle.active .toggle_button {
+  left: 3px;
+}
+ul li:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 0;
+}
+
+ul ul li {
+  float: none;
+  width: 150px;
+}
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+ul li:hover > ul {
+  display: block;
+}
+
+.hr {
+  border: none;
+}
+.error {
+  background-color: red;
+  color: black;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  margin: 20px auto; 
+}
+.small{
+  color: red;
+}

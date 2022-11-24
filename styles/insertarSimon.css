@@ -1,0 +1,176 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  background-repeat: no-repeat;
+  background-size: 100% 220%;
+  font-family: sans-serif;
+}
+.title,
+nav {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+ul {
+  text-transform: uppercase;
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -5px;
+  position: relative;
+  padding: 15px 20px;
+  background: #689ed1;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  margin: 20px auto;
+  width: 45%;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333;
+}
+
+.simon_form {
+  padding: 20px 110px;
+}
+.simon_form .font {
+  font-size: 18px;
+}
+.simon_form .font2 {
+  padding-top: 15px;
+}
+.simon_form .font3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 15px 0 15px 0;
+}
+
+.id {
+  margin: 0 47px 0 0;
+}
+.descripcion {
+  margin: 0 10px 0 0;
+}
+.estado {
+  margin: 10px 25px 0 0;
+}
+.simon_form input {
+  height: 40px;
+  width: 350px;
+  padding: 0 5px;
+  font-size: medium;
+  outline: none;
+}
+.simon_form button {
+  margin: 45px 0 30px 0;
+  height: 45px;
+  width: 120px;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: blue;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid blue;
+  transition: 0.5s;
+}
+.simon_form button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+.buttonME {
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.buttonME:hover {
+  color: black;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: red;
+  border-radius: 30px;
+  margin-left: 115px;
+}
+
+.toggle .toggle_button {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: green;
+}
+
+.toggle.active .toggle_button {
+  left: 27px;
+}
+
+ul li:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 0;
+}
+
+ul ul li {
+  float: none;
+  width: 150px;
+}
+ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+ul li:hover > ul {
+  display: block;
+}
+
+.small {
+  color: red;
+}

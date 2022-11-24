@@ -19,76 +19,107 @@ $refugio = "SELECT * FROM refugio";
         <h1 class="title">COMPAÑEROS POR SIMILITUD</h1>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="tipoCanino.html">Tipo de canino</a></li>
-                <li><a href="canino.html">Canino</a></li>
-                <li><a href="adultoMayor.html">Adulto mayor</a></li>
-                <li><a href="simon.html">Simon</a></li>
-                <li><a href="#">Más</a>
+                <li><a class="link_a" href="inicio.php">Inicio</a></li>
+                <li><a class="link_a" href="tipoCanino.php">Tipo de canino</a></li>
+                <li><a class="link_a" href="canino.php">Canino</a></li>
+                <li><a class="link_a" href="adultoMayor.php">Adulto mayor</a></li>
+                <li><a class="link_a" href="#">Más</a>
                     <ul>
-                        <li><a href="monitoreo.html">Monitoreo</a></li>
-                        <li><a href="programacion.html">Programación</a></li>
-                        <li><a href="usuario.html">Usuario</a></li>
-                        <li><a href="perfil.html">Perfil</a></li>
+                        <li><a class="link_a" href="similitud.php">Similitud</a></li>
+                        <li><a class="link_a" href="usuario.php">Usuario</a></li>
+                        <li><a class="link_a" href="perfil.php">Perfil</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </div>
-    <div class="container">
-        <form class="refugio_form" method="post" name="refugio" onsubmit="return validated()">
-            <div class="font">
-                <label class="id">Id:</label>
-                <input type="number" name="idRefugio" id="idRefugio">
-            </div>
-            <div class="font font2">
-                <label class="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-            </div>
-            <div class="font font3">
-                <label>Dirección:</label>
-                <input type="text" name="direccion" id="direccion">
-            </div>
-            <div class="font font4">
-                <label class="telefono">Teléfono:</label>
-                <input type="text" name="telefono" id="telefono">
-            </div>
-            <div class="font font5">
-                <label class="celular">Celular:</label>
-                <input type="text" name="celular" id="celular">
-            </div>
-            <div class="font font6">
-                <label class="estado">Estado:</label>
-                <div class="toggle" onclick="Animatedtoggle()">
-                    <div class="toggle_button"></div>
-                </div>
-            </div>
-            <button type="submit">Guardar</button>
-            <button>Buscar</button>
-            <button type="submit">Modificar</button>
-            <button>Eliminar</button>
-            <button type="reset">Cancelar</button>
-        </form>
-    </div>
     <div class="container_table">
+        <div class="buscar">
+            <input class="buttonsBusqueda" type="reset" value="Agregar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/insertarRefugio.php'">
+            <form class="form" method="GET">
+                <div>
+                    <input class="input_busqueda" type="text" name="busqueda" placeholder="Buscar por nombre">
+                    <input class="buttonsBusqueda" type="submit" name="Enviar" value="Buscar">
+                    <input class="buttonsBusqueda" type="reset" value="Cancelar" onclick="location.href='http://localhost/xampp/Pagina-Web/pages/refugio.php'">
+                </div>
+            </form>
+        </div>
         <div class="table_title">Datos de refugio</div>
-        <div class="table_header">id</div>
+        <div class="table_header">Código</div>
         <div class="table_header">Nombre</div>
         <div class="table_header">Dirección</div>
         <div class="table_header">Teléfono</div>
         <div class="table_header">Celular</div>
         <div class="table_header">Estado</div>
-        <?php $resultado = mysqli_query($conexion, $refugio);
+        <div class="table_header">Opciones</div>
+        <?php
+        if (isset($_GET['enviar'])) {
+            $busqueda = $_GET['busqueda'];
+            $consulta = $conexion->query("SELECT * FROM refugio WHERE nombre LIKE '%$busqueda%'");
 
-        while ($row = mysqli_fetch_assoc($resultado)) { ?>
-            <div class="table_item"><?php echo $row['id']; ?></div>
-            <div class="table_item"><?php echo $row['nombre']; ?></div>
-            <div class="table_item"><?php echo $row['direccion']; ?></div>
-            <div class="table_item"><?php echo $row['telefono']; ?></div>
-            <div class="table_item"><?php echo $row['celular']; ?></div>
-            <div class="table_item"><?php echo $row['estado']; ?></div>
+            while ($row = $consulta->fetch_array()) {
+                $consultaValidarRefugio = "SELECT * FROM canino WHERE id_refugio = '" . $row['id_refugio'] . "'";
+                $resultadoValidarRefugio = mysqli_query($conexion, $consultaValidarRefugio);
+                $numFilas = mysqli_num_rows($resultadoValidarRefugio);
+        ?>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
+                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item"><?php echo $row['direccion']; ?></div>
+                <div class="table_item"><?php echo $row['telefono']; ?></div>
+                <div class="table_item"><?php echo $row['celular']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_refugio'] == 0) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
+                <div class="table_item">
+                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
+                    <?php
+                    echo $numFilas;
+                    if ($numFilas > 0) { ?>
+                        <a class="">Eliminar</a>
+                    <?php } else { ?>
+                        <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php } ?>
+                </div>
+            <?php }
+        } else {
+            $resultado = mysqli_query($conexion, $refugio);
+
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                $consultaValidarRefugio = "SELECT * FROM canino WHERE id_refugio = '" . $row['id_refugio'] . "'";
+                $resultadoValidarRefugio = mysqli_query($conexion, $consultaValidarRefugio);
+                $numFilas = mysqli_num_rows($resultadoValidarRefugio);
+            ?>
+                <div class="table_item"><?php echo $row['id_refugio']; ?></div>
+                <div class="table_item"><?php echo $row['nombre']; ?></div>
+                <div class="table_item"><?php echo $row['direccion']; ?></div>
+                <div class="table_item"><?php echo $row['telefono']; ?></div>
+                <div class="table_item"><?php echo $row['celular']; ?></div>
+                <div class="table_item" name="estado">
+                    <?php
+                    if ($row['estado_refugio'] == 0) { ?>
+                        <label>Inactivo</label>
+                    <?php
+                    } else { ?>
+                        <label>Activo</label>
+                    <?php } ?>
+                </div>
+                <div class="table_item">
+                    <a class="buttonME" href="modificarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Modificar</a> |
+                    <?php
+                    if ($numFilas > 0) { ?>
+                        <a class="buttonNME">Eliminar</a>
+                    <?php } else { ?>
+                        <a class="buttonME" href="eliminarRefugio.php?id=<?php echo $row['id_refugio']; ?>">Eliminar</a>
+                    <?php } ?>
+                </div>
         <?php }
-        mysqli_free_result($resultado); ?>
+        } ?>
     </div>
     <script src="../js/refugio.js"></script>
 </body>

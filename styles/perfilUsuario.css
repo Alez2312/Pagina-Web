@@ -1,0 +1,98 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(0,0,220,0.2), rgba(0,0,255,0.3));
+  font-family: sans-serif;
+}
+.title{
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  font-size: 30px;
+}
+.container {
+  position: absolute;
+  z-index: 1;
+  margin: 40px 28%;
+  width: 45%;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333;
+}
+
+.adultoMayor_form {
+  padding: 20px 110px;
+}
+.adultoMayor_form .font {
+  font-size: 32px;
+  text-align: center;
+}
+.adultoMayor_form .font2 {
+  padding-top: 15px;
+}
+.adultoMayor_form .font3 {
+  padding-top: 15px;
+}
+
+.id {
+  margin: 0 82px 0 0;
+}
+.nombre1 {
+  margin: 0 20px 0 0;
+}
+.nombre2 {
+  margin: 0 2px 0 0;
+}
+.apellido1 {
+  margin: 0 20px 0 0;
+}
+.celular {
+  margin: 0 82px 0 0;
+}
+.direccion {
+  margin: 0 64px 0 0;
+}
+.foto {
+  margin: 65px 100px 0 0;
+}
+
+.imagen{
+  display: block;
+  width:50%;
+  margin: 25px 160px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+.adultoMayor_form input {
+  height: 40px;
+  width: 350px;
+  padding: 0 5px;
+  font-size: medium;
+  outline: none;
+}
+.adultoMayor_form button {
+  margin: 45px 0 30px 0;
+  height: 45px;
+  width: 120px;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: blue;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #6ab4c7;
+  transition: 0.5s;
+}
+.adultoMayor_form button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+.container_table {
+  border: 5px solid black;
+  border-radius: 5px;
+}
