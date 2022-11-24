@@ -26,17 +26,16 @@ CREATE TABLE IF NOT EXISTS `adultomayor` (
   `nombre2` varchar(50) DEFAULT NULL,
   `apellido1` varchar(50) NOT NULL,
   `apellido2` varchar(50) DEFAULT NULL,
-  `celular` varchar(10) DEFAULT NULL,
+  `celular` varchar(10) NOT NULL,
   `direccion` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.adultomayor: ~2 rows (approximately)
+-- Dumping data for table companerosporsimilitud.adultomayor: ~1 rows (approximately)
 REPLACE INTO `adultomayor` (`id`, `nombre1`, `nombre2`, `apellido1`, `apellido2`, `celular`, `direccion`, `foto`, `estado`) VALUES
-	(1234, 'Pedro', '', 'Acuña', '', '321456789', 'Calle 71', 'pedro.jpg', 0),
-	(123456, 'Jaime', 'Andres', 'Jimenez', 'Acuña', '3214567890', 'Calle 56', 'jaja.jpg', 1);
+	(123456789, 'Alez', '', 'Perez', '', '3211243431', 'Calle 56 ', 'Alejandro.jpg', 1);
 
 -- Dumping structure for table companerosporsimilitud.canino
 CREATE TABLE IF NOT EXISTS `canino` (
@@ -49,17 +48,13 @@ CREATE TABLE IF NOT EXISTS `canino` (
   `id_refugio` int(11) NOT NULL,
   `estado_canino` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_canino`),
-  KEY `FK-TipoCanino` (`id_tipo_canino`),
-  KEY `FK-Refugio` (`id_refugio`),
-  CONSTRAINT `FK-Refugio` FOREIGN KEY (`id_refugio`) REFERENCES `refugio` (`id_refugio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK-TipoCanino` FOREIGN KEY (`id_tipo_canino`) REFERENCES `tipocanino` (`id_tipo_canino`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_canino_refugio` (`id_refugio`),
+  CONSTRAINT `FK_canino_refugio` FOREIGN KEY (`id_refugio`) REFERENCES `refugio` (`id_refugio`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.canino: ~3 rows (approximately)
+-- Dumping data for table companerosporsimilitud.canino: ~0 rows (approximately)
 REPLACE INTO `canino` (`id_canino`, `nombre_canino`, `fecha_adopcion_inicial`, `fecha_adopcion_final`, `foto`, `id_tipo_canino`, `id_refugio`, `estado_canino`) VALUES
-	(123, 'qwes', '2022-11-24', '2022-11-30', 'ojitos.jpg', 1, 1, 0),
-	(5321, 'Rocky', '2022-10-16', '2022-11-16', 'ojitos.jpg', 3, 2, 1),
-	(12345, 'Ojitos', '2022-11-08', '2022-11-30', 'ojitos.jpg', 3, 3, 1);
+	(12345, 'Zeus', '2022-11-23', '2022-11-30', 'Pug01.jpg', 3, 12345, 1);
 
 -- Dumping structure for table companerosporsimilitud.login
 CREATE TABLE IF NOT EXISTS `login` (
@@ -98,11 +93,10 @@ CREATE TABLE IF NOT EXISTS `perfil` (
   PRIMARY KEY (`cod_perfil`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.perfil: ~3 rows (approximately)
+-- Dumping data for table companerosporsimilitud.perfil: ~2 rows (approximately)
 REPLACE INTO `perfil` (`cod_perfil`, `descripcion`, `estado`) VALUES
-	(1, 'Administrador', 0),
-	(2, 'Cliente', 0),
-	(21, 'wqeqwe', 0);
+	(1, 'Administrador', 1),
+	(2, 'Cliente', 0);
 
 -- Dumping structure for table companerosporsimilitud.programacion
 CREATE TABLE IF NOT EXISTS `programacion` (
@@ -133,11 +127,9 @@ CREATE TABLE IF NOT EXISTS `refugio` (
   PRIMARY KEY (`id_refugio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.refugio: ~3 rows (approximately)
+-- Dumping data for table companerosporsimilitud.refugio: ~0 rows (approximately)
 REPLACE INTO `refugio` (`id_refugio`, `nombre`, `direccion`, `telefono`, `celular`, `estado_refugio`) VALUES
-	(1, 'Las Rosas', 'Calle 56', '2020200', '3132456789', 0),
-	(2, 'Las Margaritas', 'Cra. 57', '1010100', '3124567890', 0),
-	(3, 'Los Teletubis', 'Cra. 2', '3030300', '3142567890', 1);
+	(12345, 'Las margaritas', 'Calle 56 ', '3214567890', '3123456789', 1);
 
 -- Dumping structure for table companerosporsimilitud.simon
 CREATE TABLE IF NOT EXISTS `simon` (
@@ -160,13 +152,12 @@ CREATE TABLE IF NOT EXISTS `tipocanino` (
   PRIMARY KEY (`id_tipo_canino`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.tipocanino: ~5 rows (approximately)
+-- Dumping data for table companerosporsimilitud.tipocanino: ~4 rows (approximately)
 REPLACE INTO `tipocanino` (`id_tipo_canino`, `descripcion`, `estado`) VALUES
 	(1, 'Pit Bull', 0),
 	(2, 'Chihuahua', 1),
 	(3, 'Pug', 1),
-	(4, 'Pastor alemán', 0),
-	(6, 'Bull dog', 0);
+	(4, 'Común', 0);
 
 -- Dumping structure for table companerosporsimilitud.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -176,16 +167,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `cod_perfil` int(10) NOT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`cc`) USING BTREE,
-  KEY `FK-perfil` (`cod_perfil`),
-  CONSTRAINT `FK-perfil` FOREIGN KEY (`cod_perfil`) REFERENCES `perfil` (`cod_perfil`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK-perfil` (`cod_perfil`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table companerosporsimilitud.usuario: ~4 rows (approximately)
+-- Dumping data for table companerosporsimilitud.usuario: ~2 rows (approximately)
 REPLACE INTO `usuario` (`cc`, `nombre`, `clave`, `cod_perfil`, `estado`) VALUES
-	(12345, 'Alex', '12345A', 2, 1),
-	(235783, 'Alexander', '1234', 2, 0),
-	(1234567, 'Alez', '4321', 1, 0),
-	(2345678, 'admin', '1234', 1, 0);
+	(2345678, 'admin', '1234', 1, 1);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
